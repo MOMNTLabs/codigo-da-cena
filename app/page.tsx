@@ -133,7 +133,7 @@ export default function Home() {
             <div className="timeline-copy"><span>02 / NOVOS ESPAÇOS</span><h3>[SÃO PAULO / EVENTO / DATA]</h3><p>[APRESENTAÇÃO / CONTEXTO]</p></div>
           </article>
         </div>
-        <div className="sttef reveal"><span>O PROJETO POR TRÁS DO MOVIMENTO</span><strong>STTEF</strong></div>
+        <div className="sttef reveal"><span>O PROJETO POR TRÁS DO MOVIMENTO</span><img className="sttef-logo" src="/sttef-logo.png" alt="STTEF" loading="lazy" decoding="async" /></div>
       </section>
 
       <section className="behind section-pad">
