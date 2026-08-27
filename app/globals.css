@@ -234,7 +234,7 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .hero-photo img { object-position: 50% 82%; filter: saturate(.68) contrast(1.15) brightness(.65); transform: scale(1.14) translate(-4.5%, -3%); }
   .hero-index { top: 82px; right: 18px; }
   h1 { font-size: clamp(50px, 15.5vw, 104px); line-height: .84; }
-  .hero-statement { display: block; margin: 24px 0 64px; max-width: 280px; font-size: clamp(22px, 3vw, 48px); }
+  .hero-statement { display: block; margin: 24px 0 64px; max-width: 420px; font-size: clamp(28px, 5.3vw, 30px); letter-spacing: -.02em; }
   .hero-statement::before { display: none; }
   .hero-cta { left: 18px; right: auto; bottom: 27px; }
   .hero-side { display: none; }
