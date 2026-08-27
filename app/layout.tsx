@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Código da Cena — Desenvolvimento de carreira para DJs",
   description: "Programa presencial de desenvolvimento de carreira para DJs na Grande Vitória.",
-  metadataBase: new URL("https://codigo-da-cena.sites.openai.com"),
+  metadataBase: new URL("https://codigo-da-cena.momnt-br.chatgpt.site"),
   openGraph: {
     title: "Código da Cena — Desenvolvimento de carreira para DJs",
     description: "Programa presencial de desenvolvimento de carreira para DJs na Grande Vitória.",
