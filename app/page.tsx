@@ -70,8 +70,11 @@ export default function Home() {
       </div>
 
       <section className="hero" id="top">
+        <picture className="hero-photo" aria-hidden="true">
+          <source media="(max-width: 760px)" srcSet="/sttef-hero-mobile.webp" />
+          <img src="/sttef-hero.webp" alt="" fetchPriority="high" decoding="async" />
+        </picture>
         <div className="hero-grain" aria-hidden="true" />
-        <div className="hero-art" aria-hidden="true"><div className="disc" /><div className="signal-lines" /></div>
         <div className="hero-index" aria-hidden="true">CD.C / 001</div>
         <div className="hero-copy reveal in-view">
           <p className="eyebrow">DESENVOLVIMENTO DE CARREIRA PARA DJS · GRANDE VITÓRIA</p>
