@@ -136,9 +136,11 @@ export default function Home() {
             <span className="timeline-year">MOVIMENTO</span>
             <div className="timeline-copy"><span>01 / A ESCALA</span><h3>EVENTOS MAIORES</h3><p>PÚBLICO / PRESENÇA / CONSISTÊNCIA</p></div>
             <div className="trajectory-gallery">
-              <figure className="timeline-photo"><img src="/sttef-large-crowd.webp" alt="Sttef no centro da pista durante um grande evento" loading="lazy" decoding="async" /><figcaption>PRESENÇA / PISTA</figcaption></figure>
+              <figure className="timeline-photo"><img src="/sttef-large-event-01.webp" alt="Sttef tocando em um grande palco durante o dia" loading="lazy" decoding="async" /><figcaption>PALCO / ALCANCE</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-live-crowd.webp" alt="Sttef tocando diante de uma grande pista" loading="lazy" decoding="async" /><figcaption>ESCALA / MOVIMENTO</figcaption></figure>
+              <figure className="timeline-photo"><img src="/sttef-large-event-02.webp" alt="Sttef tocando em meio a fachos de luz dourada" loading="lazy" decoding="async" /><figcaption>IMERSÃO / ENTREGA</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-large-energy.webp" alt="Sttef conduzindo o público com os braços levantados" loading="lazy" decoding="async" /><figcaption>ENERGIA / CONEXÃO</figcaption></figure>
+              <figure className="timeline-photo"><img src="/sttef-large-event-03.webp" alt="Sttef interagindo com o público diante da cabine" loading="lazy" decoding="async" /><figcaption>CONEXÃO / PÚBLICO</figcaption></figure>
             </div>
           </article>
           <article className="timeline-row reveal">
