@@ -165,28 +165,15 @@ h1 { margin: 0; max-width: 1120px; font-size: clamp(56px, 8.1vw, 130px); line-he
 
 .experience { position: relative; }
 .experience-visual { position: relative; height: 67vw; max-height: 900px; margin: 8vw 0 10vw; overflow: hidden; display: grid; place-items: center; background: radial-gradient(circle at center, #3a3a31, #131311 53%, #090909); border: 1px solid var(--line); }
-.experience-visual::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(100deg, transparent 0 7%, rgb(213 250 66 / .045) 7.2% 7.35%); transform: scale(1.25) rotate(-4deg); }
-.experience-visual > span { position: absolute; right: 18px; bottom: 18px; color: var(--muted); font-size: 9px; letter-spacing: .18em; }
-.bank-mark { position: relative; z-index: 1; color: var(--acid); font-size: clamp(100px, 22vw, 340px); line-height: .65; letter-spacing: -.09em; text-align: center; font-weight: 800; mix-blend-mode: screen; transform: skewY(-5deg); }
+.experience-visual::before { content: ""; position: absolute; z-index: 1; inset: 0; background: linear-gradient(180deg, rgb(5 5 5 / .12), rgb(5 5 5 / .48)), repeating-linear-gradient(100deg, transparent 0 7%, rgb(213 250 66 / .045) 7.2% 7.35%); transform: scale(1.25) rotate(-4deg); }
+.experience-photo { position: absolute; z-index: 0; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 46%; filter: saturate(.76) contrast(1.1) brightness(.64); }
+.experience-visual > span { position: absolute; z-index: 2; right: 18px; bottom: 18px; color: var(--muted); font-size: 9px; letter-spacing: .18em; }
+.bank-mark { position: relative; z-index: 2; color: var(--acid); font-size: clamp(100px, 22vw, 340px); line-height: .65; letter-spacing: -.09em; text-align: center; font-weight: 800; mix-blend-mode: screen; transform: skewY(-5deg); }
 .experience-copy { display: grid; grid-template-columns: 1.3fr 1fr; gap: 8vw; align-items: start; }
 .experience-copy h2 { margin: 0; font-size: clamp(65px, 9vw, 145px); line-height: .82; letter-spacing: -.07em; font-weight: 500; text-transform: uppercase; }
 .experience-copy > div { max-width: 560px; }
 .experience-copy p { margin: 0 0 30px; font-size: clamp(19px, 1.7vw, 27px); line-height: 1.4; }
 .experience-copy small { display: block; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); line-height: 1.5; }
-
-.film { border-top: 1px solid var(--line); }
-.film-head { display: flex; justify-content: space-between; align-items: end; margin: 8vw 0 2vw; }
-.film-head h2 { margin: 0; font-size: clamp(45px, 6vw, 95px); line-height: .9; letter-spacing: -.055em; font-weight: 500; }
-.film-head span { color: var(--muted); font-size: 9px; letter-spacing: .18em; }
-.film-player { position: relative; width: 100%; aspect-ratio: 16/8.3; display: grid; place-content: center; justify-items: center; overflow: hidden; border: 1px solid var(--line); color: var(--ink); background: radial-gradient(circle at 40% 45%, #34342e, #141412 50%, #080808); cursor: pointer; }
-.film-player::before { content: ""; position: absolute; z-index: 1; width: 45%; aspect-ratio: 1; border: 1px solid rgb(240 239 232 / .2); border-radius: 50%; transform: scale(.8); transition: transform .5s ease, border-color .5s ease; }
-.film-poster { position: absolute; z-index: 0; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 46%; filter: saturate(.72) contrast(1.12) brightness(.48); transform: scale(1.02); transition: filter .5s ease, transform .7s ease; }
-.film-player > span { position: relative; z-index: 1; display: grid; place-items: center; width: 84px; height: 84px; padding-left: 6px; border: 1px solid; border-radius: 50%; font-size: 20px; }
-.film-player strong { position: relative; z-index: 1; margin-top: 16px; font-size: 10px; letter-spacing: .2em; }
-.film-player i { position: absolute; z-index: 1; right: 18px; bottom: 18px; color: var(--muted); font-size: 9px; letter-spacing: .16em; font-style: normal; }
-.film-player:hover::before { transform: scale(1); border-color: var(--acid); }
-.film-player:hover > span { color: var(--acid); }
-.film-player:hover .film-poster { filter: saturate(.9) contrast(1.08) brightness(.56); transform: scale(1.045); }
 
 .interest { background: var(--acid); color: var(--dark-ink); }
 .interest :focus-visible { outline-color: var(--dark-ink); }
@@ -324,8 +311,6 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .moment-sign { flex-direction: column; gap: 10px; }
   .experience-visual { height: 110vw; }
   .experience-copy h2 { font-size: 16vw; }
-  .film-head { align-items: start; flex-direction: column; gap: 20px; }
-  .film-player { aspect-ratio: 4/3; }
   .interest-head h2 { font-size: 15vw; }
   .interest-form { grid-template-columns: 1fr; }
   .wide-field, .submit-button { grid-column: 1; }

@@ -177,21 +177,15 @@ export default function Home() {
 
       <section className="experience section-pad" id="experiencia">
         <p className="section-label reveal">09 / EXPERIÊNCIA — THE BANK</p>
-        <div className="experience-visual reveal"><div className="bank-mark">THE<br />BANK</div><span>[IMAGEM / VÍDEO NIGHTLIFE]</span></div>
+        <div className="experience-visual reveal"><img className="experience-photo" src="/sttef-live-crowd.webp" alt="Sttef tocando diante de uma pista cheia" loading="lazy" decoding="async" /><div className="bank-mark">THE<br />BANK</div><span>STTEF / AO VIVO</span></div>
         <div className="experience-copy reveal">
           <h2>A cena não termina<br />na conversa.</h2>
           <div><p>O desenvolvimento também acontece quando o artista começa a ocupar os espaços que busca.</p><p>Participantes que se destacarem ao longo do processo poderão ser selecionados para oportunidades de apresentação no The Bank.</p><small>A seleção acontece a partir do desenvolvimento e desempenho durante o programa. Não se trata de uma garantia de booking.</small></div>
         </div>
       </section>
 
-      <section className="film section-pad">
-        <p className="section-label reveal">10 / FILME</p>
-        <div className="film-head reveal"><h2>CÓDIGO DA CENA — FILME</h2><span>[DURAÇÃO]</span></div>
-        <button className="film-player reveal" type="button" aria-label="Reproduzir filme de apresentação — vídeo ainda não inserido"><img className="film-poster" src="/sttef-live-crowd.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" /><span>▶</span><strong>PLAY</strong><i>[FILME EM BREVE]</i></button>
-      </section>
-
       <section className="interest section-pad" id="contato">
-        <p className="section-label dark reveal">11 / INTERESSE</p>
+        <p className="section-label dark reveal">10 / INTERESSE</p>
         <div className="interest-head reveal"><h2>Quer entender se o Código da Cena faz sentido para o seu momento?</h2><p>Conte um pouco sobre o seu projeto.</p></div>
         {sent ? (
           <div className="form-success" role="status"><span>✓</span><h3>Recebemos seu contato.</h3><p>Falamos em breve.</p><button type="button" onClick={() => setSent(false)}>Enviar outro contato</button></div>
@@ -211,7 +205,7 @@ export default function Home() {
       </section>
 
       <section className="faq section-pad">
-        <p className="section-label reveal">12 / FAQ</p>
+        <p className="section-label reveal">11 / FAQ</p>
         <div className="faq-layout"><h2 className="reveal">PERGUNTAS<br />FREQUENTES</h2><div className="faq-list">{questions.map(([question, answer], i) => <details className="reveal" key={question}><summary><span>{String(i + 1).padStart(2, '0')}</span>{question}<i>+</i></summary><p>{answer}</p></details>)}</div></div>
       </section>
 
