@@ -126,6 +126,7 @@ export default function Home() {
           <article className="timeline-row reveal">
             <span className="timeline-year">INÍCIO</span>
             <div className="origin-gallery">
+              <figure className="timeline-photo"><img src="/sttef-small-event-05.webp" alt="Sttef tocando em um evento pequeno e diurno, próximo ao público" loading="lazy" decoding="async" /><figcaption>ROTINA / PRESENÇA</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-small-event-01.webp" alt="Sttef tocando em um evento menor com iluminação vermelha" loading="lazy" decoding="async" /><figcaption>PROXIMIDADE / PISTA</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-small-event-02.webp" alt="Sttef tocando com fones em um espaço intimista" loading="lazy" decoding="async" /><figcaption>PRÁTICA / PRESENÇA</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-small-event-03.webp" alt="Sttef tocando em um evento diurno de menor escala" loading="lazy" decoding="async" /><figcaption>BASE / CONSTÂNCIA</figcaption></figure>
@@ -155,6 +156,7 @@ export default function Home() {
             <div className="dream-gallery">
               <figure className="timeline-photo"><img src="/sttef-lineup-almare.webp" alt="Flyer do Almare com Sttef no line-up ao lado de atrações nacionais" loading="lazy" decoding="async" /><figcaption>LINE-UP / ALMARE</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-lineup-tech-house.webp" alt="Flyer do Tech House com Sttef no line-up ao lado de atrações nacionais" loading="lazy" decoding="async" /><figcaption>LINE-UP / TECH HOUSE</figcaption></figure>
+              <figure className="timeline-photo"><img src="/sttef-lineup-garden.webp" alt="Flyer do Garden com Sttef no line-up ao lado de Gustavo Mota" loading="lazy" decoding="async" /><figcaption>LINE-UP / GARDEN</figcaption></figure>
             </div>
           </article>
         </div>
