@@ -155,8 +155,8 @@ export default function Home() {
             <span className="timeline-year">MARCO</span>
             <div className="timeline-copy dream-copy"><span>03 / UM SONHO EM MOVIMENTO</span><h3>REALIZAÇÃO<br />DE UM SONHO</h3><p>DIVIDIR O LINE-UP COM REFERÊNCIAS DA CENA — E ENTENDER QUE O PROJETO JÁ ESTAVA OCUPANDO OUTRO LUGAR.</p></div>
             <div className="dream-gallery">
-              <figure className="timeline-photo"><img src="/sttef-lineup-almare.webp" alt="Flyer do Almare com Sttef no line-up ao lado de atrações nacionais" loading="lazy" decoding="async" /><figcaption>LINE-UP / ALMARE</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-lineup-tech-house.webp" alt="Flyer do Tech House com Sttef no line-up ao lado de atrações nacionais" loading="lazy" decoding="async" /><figcaption>LINE-UP / TECH HOUSE</figcaption></figure>
+              <figure className="timeline-photo"><img src="/sttef-lineup-almare.webp" alt="Flyer do Almare com Sttef no line-up ao lado de atrações nacionais" loading="lazy" decoding="async" /><figcaption>LINE-UP / ALMARE</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-lineup-garden.webp" alt="Flyer do Garden com Sttef no line-up ao lado de Gustavo Mota" loading="lazy" decoding="async" /><figcaption>LINE-UP / GARDEN</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-lineup-brava-stage.webp" alt="Flyer do Brava Stage Club com Sttef no line-up" loading="lazy" decoding="async" /><figcaption>LINE-UP / BRAVA STAGE</figcaption></figure>
             </div>
