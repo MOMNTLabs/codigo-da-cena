@@ -121,16 +121,16 @@ export default function Home() {
         </div>
         <div className="timeline">
           <article className="timeline-row reveal">
-            <span className="timeline-year">INÍCIO</span><figure className="timeline-photo portrait"><img src="/sttef-live-close.webp" alt="Sttef tocando em meio ao público" loading="lazy" decoding="async" /><figcaption>STTEF / AO VIVO</figcaption></figure>
-            <div className="timeline-copy"><span>00 / ORIGEM</span><h3>[INÍCIO DO PROJETO]</h3><p>[LOCAL / DATA]</p></div>
+            <span className="timeline-year">INÍCIO</span><div className="media-placeholder portrait origin-placeholder">[FOTO DO PRIMEIRO EVENTO]</div>
+            <div className="timeline-copy"><span>00 / O COMEÇO</span><h3>[PRIMEIRO EVENTO]</h3><p>[LOCAL / DATA]</p></div>
           </article>
           <article className="timeline-row reverse reveal">
-            <span className="timeline-year">MOVIMENTO</span><figure className="timeline-photo landscape"><img src="/sttef-live-booth.webp" alt="Sttef tocando em uma pista iluminada" loading="lazy" decoding="async" /><figcaption>PRESENÇA / CENA / MOVIMENTO</figcaption></figure>
-            <div className="timeline-copy"><span>01 / CENA LOCAL</span><h3>[EVENTO / LOCAL / DATA]</h3><p>[MOMENTO IMPORTANTE DA CARREIRA]</p></div>
+            <span className="timeline-year">MOVIMENTO</span><div className="timeline-photo-pair"><figure className="timeline-photo paired"><img src="/sttef-live-close.webp" alt="Sttef tocando em meio ao público" loading="lazy" decoding="async" /><figcaption>STTEF / AO VIVO</figcaption></figure><figure className="timeline-photo paired"><img src="/sttef-live-booth.webp" alt="Sttef tocando em uma pista iluminada" loading="lazy" decoding="async" /><figcaption>CENA / ESCALA</figcaption></figure></div>
+            <div className="timeline-copy"><span>01 / A ESCALA</span><h3>EVENTOS MAIORES</h3><p>PÚBLICO / PRESENÇA / CONSISTÊNCIA</p></div>
           </article>
           <article className="timeline-row reveal">
-            <span className="timeline-year">EXPANSÃO</span><div className="media-placeholder portrait">[IMAGEM]</div>
-            <div className="timeline-copy"><span>02 / NOVOS ESPAÇOS</span><h3>[SÃO PAULO / EVENTO / DATA]</h3><p>[APRESENTAÇÃO / CONTEXTO]</p></div>
+            <span className="timeline-year">EXPANSÃO</span><figure className="timeline-photo landscape sp-photo"><img src="/sttef-live-sao-paulo.webp" alt="Apresentação em São Paulo vista de trás da cabine" loading="lazy" decoding="async" /><figcaption>SÃO PAULO / AO VIVO</figcaption></figure>
+            <div className="timeline-copy"><span>02 / NOVOS ESPAÇOS</span><h3>SÃO PAULO</h3><p>[EVENTO / DATA]</p></div>
           </article>
         </div>
         <div className="sttef reveal"><span>O PROJETO POR TRÁS DO MOVIMENTO</span><img className="sttef-logo" src="/sttef-logo.png" alt="STTEF" loading="lazy" decoding="async" /></div>
