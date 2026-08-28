@@ -121,12 +121,17 @@ export default function Home() {
         </div>
         <div className="timeline">
           <article className="timeline-row reveal">
-            <span className="timeline-year">INÍCIO</span><div className="media-placeholder portrait origin-placeholder">[FOTO DO PRIMEIRO EVENTO]</div>
-            <div className="timeline-copy"><span>00 / O COMEÇO</span><h3>[PRIMEIRO EVENTO]</h3><p>[LOCAL / DATA]</p></div>
+            <span className="timeline-year">INÍCIO</span><div className="media-placeholder portrait origin-placeholder">[FOTO DE EVENTO MENOR]</div>
+            <div className="timeline-copy"><span>00 / A BASE</span><h3>EVENTOS MENORES</h3><p>ONDE A PRESENÇA COMEÇOU A GANHAR FORMA</p></div>
           </article>
-          <article className="timeline-row reverse reveal">
-            <span className="timeline-year">MOVIMENTO</span><div className="timeline-photo-pair"><figure className="timeline-photo paired"><img src="/sttef-live-close.webp" alt="Sttef tocando em meio ao público" loading="lazy" decoding="async" /><figcaption>STTEF / AO VIVO</figcaption></figure><figure className="timeline-photo paired"><img src="/sttef-live-booth.webp" alt="Sttef tocando em uma pista iluminada" loading="lazy" decoding="async" /><figcaption>CENA / ESCALA</figcaption></figure></div>
+          <article className="timeline-row showcase-row reveal">
+            <span className="timeline-year">MOVIMENTO</span>
             <div className="timeline-copy"><span>01 / A ESCALA</span><h3>EVENTOS MAIORES</h3><p>PÚBLICO / PRESENÇA / CONSISTÊNCIA</p></div>
+            <div className="trajectory-gallery">
+              <figure className="timeline-photo"><img src="/sttef-large-crowd.webp" alt="Sttef no centro da pista durante um grande evento" loading="lazy" decoding="async" /><figcaption>PRESENÇA / PISTA</figcaption></figure>
+              <figure className="timeline-photo"><img src="/sttef-large-booth.webp" alt="Sttef tocando para uma pista cheia" loading="lazy" decoding="async" /><figcaption>ESCALA / MOVIMENTO</figcaption></figure>
+              <figure className="timeline-photo"><img src="/sttef-large-energy.webp" alt="Sttef conduzindo o público com os braços levantados" loading="lazy" decoding="async" /><figcaption>ENERGIA / CONEXÃO</figcaption></figure>
+            </div>
           </article>
           <article className="timeline-row reveal">
             <span className="timeline-year">EXPANSÃO</span><figure className="timeline-photo landscape sp-photo"><img src="/sttef-live-sao-paulo.webp" alt="Apresentação em São Paulo vista de trás da cabine" loading="lazy" decoding="async" /><figcaption>SÃO PAULO / AO VIVO</figcaption></figure>
