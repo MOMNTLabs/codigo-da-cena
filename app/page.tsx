@@ -75,7 +75,7 @@ export default function Home() {
           <img src="/sttef-hero.webp" alt="" fetchPriority="high" decoding="async" />
         </picture>
         <video className="hero-video" autoPlay muted loop playsInline preload="metadata" poster="/sttef-hero-mobile.webp" aria-hidden="true" tabIndex={-1}>
-          <source src="/sttef-hero-loop.mov" type="video/quicktime" />
+          <source src="/sttef-hero-loop.mp4" type="video/mp4" />
         </video>
         <div className="hero-grain" aria-hidden="true" />
         <div className="hero-index" aria-hidden="true">CD.C / 001</div>
