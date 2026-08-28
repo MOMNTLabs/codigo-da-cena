@@ -146,7 +146,7 @@ export default function Home() {
             </div>
           </article>
           <article className="timeline-row reveal">
-            <span className="timeline-year">EXPANSÃO</span><figure className="timeline-photo landscape sp-photo"><img src="/sttef-live-sao-paulo.webp" alt="Apresentação em São Paulo vista de trás da cabine" loading="lazy" decoding="async" /><figcaption>SÃO PAULO / AO VIVO</figcaption></figure>
+            <span className="timeline-year">EXPANSÃO</span><figure className="timeline-photo landscape sp-photo"><img src="/sttef-live-sao-paulo.webp" alt="Apresentação em São Paulo vista de trás da cabine" loading="lazy" decoding="async" /><figcaption>SÃO PAULO</figcaption></figure>
             <div className="timeline-copy"><span>02 / NOVOS TERRITÓRIOS</span><h3>EXPANDINDO</h3><p>SÃO PAULO / NOVAS CENAS</p></div>
           </article>
           <article className="timeline-row dream-row reveal">

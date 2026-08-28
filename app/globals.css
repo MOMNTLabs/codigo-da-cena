@@ -333,7 +333,7 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .duration-note { font-size: 21px; }
   .media-placeholder.portrait, .media-placeholder.landscape, .timeline-photo.portrait, .timeline-photo.landscape { width: 82%; }
   .trajectory-gallery { width: 100%; gap: 12px; }
-  .dream-gallery { width: 100%; gap: 9px; }
+  .dream-row > .dream-gallery { width: 100%; gap: 9px; }
   .origin-gallery { width: 100%; gap: 8px; }
   .display-title { font-size: clamp(70px, 23vw, 120px); }
   .word-field { min-height: 700px; gap: 24px 8px; }
