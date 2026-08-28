@@ -171,17 +171,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="moment section-pad">
-        <p className="section-label reveal">08 / MOMENT AGENCY</p>
-        <h2 className="reveal">Antes de ouvirem você,<br /><em>já podem ter visto você.</em></h2>
-        <div className="moment-grid">
-          <div className="moment-copy reveal"><p className="lead">A forma como um artista se apresenta também constrói percepção.</p><p>Posicionamento, identidade, comunicação e conteúdo fazem parte da maneira como um projeto é percebido dentro e fora da cena.</p><p>Essa frente do Código da Cena é desenvolvida em conjunto com a Moment Agency.</p></div>
-          <div className="moment-media reveal"><div className="media-placeholder wide"><span className="play">▶</span>[VÍDEO / MOTION / BRANDING]</div><div className="moment-sign"><strong>MOMENT AGENCY</strong><span>Brand · Image · Communication</span></div></div>
-        </div>
-      </section>
-
       <section className="experience section-pad" id="experiencia">
-        <p className="section-label reveal">09 / EXPERIÊNCIA — THE BANK</p>
+        <p className="section-label reveal">08 / EXPERIÊNCIA — THE BANK</p>
         <div className="experience-visual reveal"><img className="experience-photo" src="/sttef-live-crowd.webp" alt="Sttef tocando diante de uma pista cheia" loading="lazy" decoding="async" /><div className="bank-mark">THE<br />BANK</div><span>STTEF / AO VIVO</span></div>
         <div className="experience-copy reveal">
           <h2>A cena não termina<br />na conversa.</h2>
@@ -190,7 +181,7 @@ export default function Home() {
       </section>
 
       <section className="interest section-pad" id="contato">
-        <p className="section-label dark reveal">10 / INTERESSE</p>
+        <p className="section-label dark reveal">09 / INTERESSE</p>
         <div className="interest-head reveal"><h2>Quer entender se o Código da Cena faz sentido para o seu momento?</h2><p>Conte um pouco sobre o seu projeto.</p></div>
         {sent ? (
           <div className="form-success" role="status"><span>✓</span><h3>Recebemos seu contato.</h3><p>Falamos em breve.</p><button type="button" onClick={() => setSent(false)}>Enviar outro contato</button></div>
@@ -210,13 +201,13 @@ export default function Home() {
       </section>
 
       <section className="faq section-pad">
-        <p className="section-label reveal">11 / FAQ</p>
+        <p className="section-label reveal">10 / FAQ</p>
         <div className="faq-layout"><h2 className="reveal">PERGUNTAS<br />FREQUENTES</h2><div className="faq-list">{questions.map(([question, answer], i) => <details className="reveal" key={question}><summary><span>{String(i + 1).padStart(2, '0')}</span>{question}<i>+</i></summary><p>{answer}</p></details>)}</div></div>
       </section>
 
       <footer>
         <div className="footer-top"><a className="footer-brand" href="#top" aria-label="Código da Cena — voltar ao início"><img className="footer-brand-logo" src="/codigo-da-cena-profile-white.png" alt="" aria-hidden="true" loading="lazy" decoding="async" /></a><div><span>LOCAL</span><p>Grande Vitória · ES</p></div><div><span>ENCONTRE</span><a href="#">Instagram ↗</a><a href="mailto:contato@codigodacena.com">Contato ↗</a></div></div>
-        <div className="footer-bottom"><span>© 2026 CÓDIGO DA CENA</span><span>Estratégia e comunicação · Moment Agency</span><a href="#top">VOLTAR AO TOPO ↑</a></div>
+        <div className="footer-bottom"><span>© 2026 CÓDIGO DA CENA</span><span>DESENVOLVIMENTO DE CARREIRA PARA DJS</span><a href="#top">VOLTAR AO TOPO ↑</a></div>
       </footer>
     </main>
   );

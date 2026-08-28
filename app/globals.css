@@ -103,7 +103,6 @@ h1 { margin: 0; max-width: 1120px; font-size: clamp(56px, 8.1vw, 130px); line-he
 .trajectory-gallery .timeline-photo img { object-position: center; }
 .sp-photo img { object-position: center 50%; }
 .origin-placeholder { padding: 20px; text-align: center; line-height: 1.5; }
-.play { display: grid; place-items: center; width: 52px; height: 52px; margin-bottom: 12px; border: 1px solid; border-radius: 50%; padding-left: 3px; }
 .timeline-copy { display: flex; flex-direction: column; justify-content: center; padding: 10%; }
 .timeline-copy span { color: var(--acid); font-size: 9px; letter-spacing: .18em; }
 .timeline-copy h3 { margin: 28px 0 16px; font-size: clamp(35px, 4.7vw, 76px); line-height: .92; letter-spacing: -.05em; font-weight: 500; }
@@ -160,17 +159,6 @@ h1 { margin: 0; max-width: 1120px; font-size: clamp(56px, 8.1vw, 130px); line-he
 .principle p { min-width: 0; margin: 0; overflow-wrap: anywhere; color: var(--muted); font-size: 9px; line-height: 1.5; letter-spacing: .14em; }
 .principle i { font-size: 22px; font-style: normal; }
 .principle:hover { padding-left: 1.5%; color: var(--acid); }
-
-.moment { background: #171715; }
-.moment h2 { margin: 9vw 0 10vw 16.5%; font-size: clamp(58px, 8.5vw, 136px); line-height: .88; letter-spacing: -.06em; font-weight: 500; text-transform: uppercase; }
-.moment h2 em { color: var(--acid); font: italic 400 1em/.9 Georgia, serif; text-transform: none; }
-.moment-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 7vw; align-items: start; }
-.moment-copy { display: flex; flex-direction: column; gap: 30px; }
-.moment-copy p { margin: 0; color: #b8b8b0; font-size: 15px; line-height: 1.55; }
-.moment-copy .lead { color: var(--ink); font-size: clamp(26px, 2.7vw, 43px); line-height: 1.1; letter-spacing: -.035em; }
-.media-placeholder.wide { aspect-ratio: 16/9; }
-.moment-sign { display: flex; justify-content: space-between; padding: 18px 0; border-bottom: 1px solid var(--line); font-size: 10px; letter-spacing: .14em; }
-.moment-sign span { color: var(--muted); }
 
 .experience { position: relative; }
 .experience-visual { position: relative; height: 67vw; max-height: 900px; margin: 8vw 0 10vw; overflow: hidden; display: grid; place-items: center; background: radial-gradient(circle at center, #3a3a31, #131311 53%, #090909); border: 1px solid var(--line); }
@@ -283,7 +271,7 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .w8 { grid-column: 4 / -1; grid-row: 7; justify-self: end; }
   .w9 { grid-column: 2 / -1; grid-row: 8; font-size: 15vw; }
   .behind-note { margin-top: 90px; margin-left: 0; max-width: 100%; padding-top: 28px; text-align: left; }
-  .program-intro, .codes-head, .moment-grid, .experience-copy, .interest-head, .faq-layout { grid-template-columns: 1fr; }
+  .program-intro, .codes-head, .experience-copy, .interest-head, .faq-layout { grid-template-columns: 1fr; }
   .program-intro { gap: 70px; }
   .program-intro h2 { font-size: clamp(78px, 21vw, 150px); }
   .program-statement { margin-left: 0; }
@@ -294,8 +282,6 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .principle { grid-template-columns: 42px 1fr 28px; padding: 24px 0; }
   .principle p { grid-column: 2 / -1; margin-top: 18px; }
   .principle i { grid-column: 3; grid-row: 1; }
-  .moment h2 { margin-left: 0; }
-  .moment-grid { gap: 70px; }
   .experience-visual { height: 85vw; }
   .experience-copy { gap: 65px; }
   .interest-head { gap: 50px; }
@@ -325,8 +311,6 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .codes-head h2 { font-size: clamp(58px, 17vw, 90px); }
   .principle h3 { font-size: 9.5vw; }
   .principle { grid-template-columns: 34px minmax(0, 1fr) 28px; }
-  .moment h2 { font-size: 15vw; }
-  .moment-sign { flex-direction: column; gap: 10px; }
   .experience-visual { height: 110vw; }
   .experience-copy h2 { font-size: 16vw; }
   .interest-head h2 { font-size: 15vw; }
