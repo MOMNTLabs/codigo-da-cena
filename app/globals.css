@@ -266,7 +266,8 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .media-placeholder.portrait, .timeline-photo.portrait { width: 65%; }
   .showcase-row { padding: 80px 0 100px; }
   .showcase-row > .timeline-copy { grid-row: 1; padding: 0 8% 55px; }
-  .trajectory-gallery { grid-row: 2; grid-template-columns: 1fr; width: 82%; gap: 34px; }
+  .trajectory-gallery { grid-row: 2; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 82%; gap: 18px; }
+  .trajectory-gallery .timeline-photo:first-child { grid-column: 1 / -1; }
   .trajectory-gallery .timeline-photo:nth-child(2) { margin-top: 0; }
   .timeline-copy h3 { font-size: clamp(38px, 9vw, 70px); }
   .sttef-logo { width: 100%; }
@@ -305,7 +306,7 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .duration span { font-size: 35px; }
   .duration-note { font-size: 21px; }
   .media-placeholder.portrait, .media-placeholder.landscape, .timeline-photo.portrait, .timeline-photo.landscape { width: 82%; }
-  .trajectory-gallery { width: 100%; gap: 24px; }
+  .trajectory-gallery { width: 100%; gap: 12px; }
   .display-title { font-size: clamp(70px, 23vw, 120px); }
   .w1 { font-size: 9.5vw; }
   .w3 { left: 4%; font-size: 18vw; }
