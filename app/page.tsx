@@ -121,11 +121,11 @@ export default function Home() {
         </div>
         <div className="timeline">
           <article className="timeline-row reveal">
-            <span className="timeline-year">INÍCIO</span><div className="media-placeholder portrait">[IMAGEM]</div>
+            <span className="timeline-year">INÍCIO</span><figure className="timeline-photo portrait"><img src="/sttef-live-close.webp" alt="Sttef tocando em meio ao público" loading="lazy" decoding="async" /><figcaption>STTEF / AO VIVO</figcaption></figure>
             <div className="timeline-copy"><span>00 / ORIGEM</span><h3>[INÍCIO DO PROJETO]</h3><p>[LOCAL / DATA]</p></div>
           </article>
           <article className="timeline-row reverse reveal">
-            <span className="timeline-year">MOVIMENTO</span><div className="media-placeholder landscape"><span className="play">▶</span>[VÍDEO]</div>
+            <span className="timeline-year">MOVIMENTO</span><figure className="timeline-photo landscape"><img src="/sttef-live-booth.webp" alt="Sttef tocando em uma pista iluminada" loading="lazy" decoding="async" /><figcaption>PRESENÇA / CENA / MOVIMENTO</figcaption></figure>
             <div className="timeline-copy"><span>01 / CENA LOCAL</span><h3>[EVENTO / LOCAL / DATA]</h3><p>[MOMENTO IMPORTANTE DA CARREIRA]</p></div>
           </article>
           <article className="timeline-row reveal">
@@ -187,7 +187,7 @@ export default function Home() {
       <section className="film section-pad">
         <p className="section-label reveal">10 / FILME</p>
         <div className="film-head reveal"><h2>CÓDIGO DA CENA — FILME</h2><span>[DURAÇÃO]</span></div>
-        <button className="film-player reveal" type="button" aria-label="Reproduzir filme de apresentação — vídeo ainda não inserido"><span>▶</span><strong>PLAY</strong><i>[PLAYER / POSTER DO VÍDEO]</i></button>
+        <button className="film-player reveal" type="button" aria-label="Reproduzir filme de apresentação — vídeo ainda não inserido"><img className="film-poster" src="/sttef-live-crowd.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" /><span>▶</span><strong>PLAY</strong><i>[FILME EM BREVE]</i></button>
       </section>
 
       <section className="interest section-pad" id="contato">

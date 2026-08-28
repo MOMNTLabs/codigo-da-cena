@@ -85,12 +85,22 @@ h1 { margin: 0; max-width: 1120px; font-size: clamp(56px, 8.1vw, 130px); line-he
 .media-placeholder::before { content: ""; position: absolute; inset: -20%; background: repeating-linear-gradient(115deg, transparent 0 8%, rgb(213 250 66 / .035) 8.2% 8.4%); transform: rotate(8deg); }
 .media-placeholder.portrait { width: 56%; aspect-ratio: .74; margin: 12% auto; transform: rotate(-2deg); }
 .media-placeholder.landscape { width: 78%; aspect-ratio: 1.45; margin: auto; transform: rotate(2deg); }
+.timeline-photo { position: relative; overflow: hidden; border: 1px solid var(--line); background: #111; }
+.timeline-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 58%, rgb(5 5 5 / .72)); pointer-events: none; }
+.timeline-photo img { display: block; width: 100%; height: 100%; object-fit: cover; filter: saturate(.76) contrast(1.08); transition: transform .7s ease, filter .7s ease; }
+.timeline-photo:hover img { transform: scale(1.035); filter: saturate(.95) contrast(1.05); }
+.timeline-photo figcaption { position: absolute; z-index: 1; right: 14px; bottom: 13px; color: var(--ink); font-size: 8px; letter-spacing: .16em; }
+.timeline-photo.portrait { width: 56%; aspect-ratio: .74; margin: 12% auto; transform: rotate(-2deg); }
+.timeline-photo.portrait img { object-position: 52% center; }
+.timeline-photo.landscape { width: 78%; aspect-ratio: 1.45; margin: auto; transform: rotate(2deg); }
+.timeline-photo.landscape img { object-position: center 44%; }
 .play { display: grid; place-items: center; width: 52px; height: 52px; margin-bottom: 12px; border: 1px solid; border-radius: 50%; padding-left: 3px; }
 .timeline-copy { display: flex; flex-direction: column; justify-content: center; padding: 10%; }
 .timeline-copy span { color: var(--acid); font-size: 9px; letter-spacing: .18em; }
 .timeline-copy h3 { margin: 28px 0 16px; font-size: clamp(35px, 4.7vw, 76px); line-height: .92; letter-spacing: -.05em; font-weight: 500; }
 .timeline-copy p { color: var(--muted); font-size: 10px; letter-spacing: .16em; }
 .timeline-row.reverse .media-placeholder { grid-column: 2; grid-row: 1; }
+.timeline-row.reverse .timeline-photo { grid-column: 2; grid-row: 1; }
 .timeline-row.reverse .timeline-copy { grid-column: 1; grid-row: 1; text-align: right; align-items: flex-end; }
 .sttef { border-top: 1px solid var(--line); padding-top: 80px; }
 .sttef span { display: block; margin-bottom: 26px; color: var(--muted); font-size: 9px; letter-spacing: .18em; }
@@ -169,12 +179,14 @@ h1 { margin: 0; max-width: 1120px; font-size: clamp(56px, 8.1vw, 130px); line-he
 .film-head h2 { margin: 0; font-size: clamp(45px, 6vw, 95px); line-height: .9; letter-spacing: -.055em; font-weight: 500; }
 .film-head span { color: var(--muted); font-size: 9px; letter-spacing: .18em; }
 .film-player { position: relative; width: 100%; aspect-ratio: 16/8.3; display: grid; place-content: center; justify-items: center; overflow: hidden; border: 1px solid var(--line); color: var(--ink); background: radial-gradient(circle at 40% 45%, #34342e, #141412 50%, #080808); cursor: pointer; }
-.film-player::before { content: ""; position: absolute; width: 45%; aspect-ratio: 1; border: 1px solid rgb(240 239 232 / .2); border-radius: 50%; transform: scale(.8); transition: transform .5s ease, border-color .5s ease; }
+.film-player::before { content: ""; position: absolute; z-index: 1; width: 45%; aspect-ratio: 1; border: 1px solid rgb(240 239 232 / .2); border-radius: 50%; transform: scale(.8); transition: transform .5s ease, border-color .5s ease; }
+.film-poster { position: absolute; z-index: 0; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 46%; filter: saturate(.72) contrast(1.12) brightness(.48); transform: scale(1.02); transition: filter .5s ease, transform .7s ease; }
 .film-player > span { position: relative; z-index: 1; display: grid; place-items: center; width: 84px; height: 84px; padding-left: 6px; border: 1px solid; border-radius: 50%; font-size: 20px; }
 .film-player strong { position: relative; z-index: 1; margin-top: 16px; font-size: 10px; letter-spacing: .2em; }
-.film-player i { position: absolute; right: 18px; bottom: 18px; color: var(--muted); font-size: 9px; letter-spacing: .16em; font-style: normal; }
+.film-player i { position: absolute; z-index: 1; right: 18px; bottom: 18px; color: var(--muted); font-size: 9px; letter-spacing: .16em; font-style: normal; }
 .film-player:hover::before { transform: scale(1); border-color: var(--acid); }
 .film-player:hover > span { color: var(--acid); }
+.film-player:hover .film-poster { filter: saturate(.9) contrast(1.08) brightness(.56); transform: scale(1.045); }
 
 .interest { background: var(--acid); color: var(--dark-ink); }
 .interest :focus-visible { outline-color: var(--dark-ink); }
@@ -253,9 +265,9 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .duration-note { margin: 55px 0 110px; }
   .timeline-row { grid-template-columns: 1fr; min-height: 0; padding: 70px 0; }
   .timeline::before, .trajectory::before, .timeline-row::before { display: none; }
-  .timeline-row .media-placeholder, .timeline-row.reverse .media-placeholder { grid-column: 1; grid-row: 1; }
+  .timeline-row .media-placeholder, .timeline-row.reverse .media-placeholder, .timeline-row .timeline-photo, .timeline-row.reverse .timeline-photo { grid-column: 1; grid-row: 1; }
   .timeline-row .timeline-copy, .timeline-row.reverse .timeline-copy { grid-column: 1; grid-row: 2; align-items: flex-start; padding: 55px 0 0 10%; text-align: left; }
-  .media-placeholder.portrait { width: 65%; }
+  .media-placeholder.portrait, .timeline-photo.portrait { width: 65%; }
   .timeline-copy h3 { font-size: clamp(38px, 9vw, 70px); }
   .sttef-logo { width: 100%; }
   .behind { min-height: 1050px; }
@@ -292,7 +304,7 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .question blockquote { margin-top: 100px; }
   .duration span { font-size: 35px; }
   .duration-note { font-size: 21px; }
-  .media-placeholder.portrait, .media-placeholder.landscape { width: 82%; }
+  .media-placeholder.portrait, .media-placeholder.landscape, .timeline-photo.portrait, .timeline-photo.landscape { width: 82%; }
   .display-title { font-size: clamp(70px, 23vw, 120px); }
   .w1 { font-size: 9.5vw; }
   .w3 { left: 4%; font-size: 18vw; }
