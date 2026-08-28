@@ -74,6 +74,9 @@ export default function Home() {
           <source media="(max-width: 760px)" srcSet="/sttef-hero-mobile.webp" />
           <img src="/sttef-hero.webp" alt="" fetchPriority="high" decoding="async" />
         </picture>
+        <video className="hero-video" autoPlay muted loop playsInline preload="metadata" poster="/sttef-hero-mobile.webp" aria-hidden="true" tabIndex={-1}>
+          <source src="/sttef-hero-loop.mov" type="video/quicktime" />
+        </video>
         <div className="hero-grain" aria-hidden="true" />
         <div className="hero-index" aria-hidden="true">CD.C / 001</div>
         <div className="hero-copy reveal in-view">
