@@ -130,7 +130,6 @@ export default function Home() {
               <figure className="timeline-photo"><img src="/sttef-small-event-01.webp" alt="Sttef tocando em um evento menor com iluminação vermelha" loading="lazy" decoding="async" /><figcaption>PROXIMIDADE / PISTA</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-small-event-02.webp" alt="Sttef tocando com fones em um espaço intimista" loading="lazy" decoding="async" /><figcaption>PRÁTICA / PRESENÇA</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-small-event-03.webp" alt="Sttef tocando em um evento diurno de menor escala" loading="lazy" decoding="async" /><figcaption>BASE / CONSTÂNCIA</figcaption></figure>
-              <figure className="timeline-photo"><img src="/sttef-small-event-04.webp" alt="Sttef tocando próximo ao público em um evento pequeno com luz vermelha" loading="lazy" decoding="async" /><figcaption>INTIMIDADE / PISTA</figcaption></figure>
             </div>
             <div className="timeline-copy"><span>00 / A BASE</span><h3>CONSTRUINDO</h3><p>OS PRIMEIROS ESPAÇOS ONDE A PRESENÇA GANHOU FORMA</p></div>
           </article>
@@ -157,6 +156,7 @@ export default function Home() {
               <figure className="timeline-photo"><img src="/sttef-lineup-almare.webp" alt="Flyer do Almare com Sttef no line-up ao lado de atrações nacionais" loading="lazy" decoding="async" /><figcaption>LINE-UP / ALMARE</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-lineup-tech-house.webp" alt="Flyer do Tech House com Sttef no line-up ao lado de atrações nacionais" loading="lazy" decoding="async" /><figcaption>LINE-UP / TECH HOUSE</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-lineup-garden.webp" alt="Flyer do Garden com Sttef no line-up ao lado de Gustavo Mota" loading="lazy" decoding="async" /><figcaption>LINE-UP / GARDEN</figcaption></figure>
+              <figure className="timeline-photo"><img src="/sttef-lineup-brava-stage.webp" alt="Flyer do Brava Stage Club com Sttef no line-up" loading="lazy" decoding="async" /><figcaption>LINE-UP / BRAVA STAGE</figcaption></figure>
             </div>
           </article>
         </div>

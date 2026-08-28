@@ -111,7 +111,7 @@ h1 { margin: 0; max-width: 1120px; font-size: clamp(56px, 8.1vw, 130px); line-he
 .dream-copy { grid-column: 1; grid-row: 1; align-items: flex-start; padding: 12%; }
 .dream-copy h3 { max-width: 720px; font-size: clamp(48px, 5.8vw, 94px); }
 .dream-copy p { max-width: 470px; font-size: 11px; line-height: 1.65; }
-.dream-gallery { grid-column: 2; grid-row: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: center; gap: clamp(10px, 1.1vw, 18px); width: 92%; margin: auto; }
+.dream-gallery { grid-column: 2; grid-row: 1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: center; gap: clamp(10px, 1.1vw, 18px); width: 96%; margin: auto; }
 .dream-gallery .timeline-photo { width: 100%; aspect-ratio: 9 / 16; margin: 0; transform: none; }
 .dream-gallery .timeline-photo:first-child { transform: translateY(-5%); }
 .dream-gallery .timeline-photo:last-child { transform: translateY(5%); }
@@ -282,11 +282,11 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .dream-row > .dream-copy { grid-column: 1; grid-row: 1; align-items: flex-start; padding: 0 8% 55px; text-align: left; }
   .dream-row > .dream-gallery { grid-column: 1; grid-row: 2; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 86%; gap: 12px; }
   .dream-gallery .timeline-photo:first-child, .dream-gallery .timeline-photo:last-child { transform: none; }
-  .dream-gallery .timeline-photo:last-child { grid-column: 1 / -1; width: calc(50% - 6px); justify-self: center; }
+  .dream-gallery .timeline-photo:last-child:nth-child(odd) { grid-column: 1 / -1; width: calc(50% - 6px); justify-self: center; }
   .origin-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; width: 82%; height: auto; gap: 10px; transform: none; }
   .origin-gallery .timeline-photo,
   .origin-gallery .timeline-photo:first-child { grid-row: auto; aspect-ratio: 9 / 16; }
-  .origin-gallery .timeline-photo:last-child { grid-column: 1 / -1; width: calc(50% - 5px); justify-self: center; }
+  .origin-gallery .timeline-photo:last-child:nth-child(odd) { grid-column: 1 / -1; width: calc(50% - 5px); justify-self: center; }
   .origin-gallery .timeline-photo:nth-child(2) img { object-position: center 20%; }
   .origin-gallery .timeline-photo figcaption { display: none; }
   .timeline-copy h3 { font-size: clamp(38px, 9vw, 70px); }
