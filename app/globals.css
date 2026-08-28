@@ -277,8 +277,8 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .trajectory-gallery { grid-row: 2; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 82%; gap: 18px; }
   .trajectory-gallery .timeline-photo:nth-child(even) { margin-top: 0; }
   .dream-row { padding: 80px 0 100px; }
-  .dream-copy { grid-column: 1; grid-row: 1; padding: 0 8% 55px; }
-  .dream-gallery { grid-column: 1; grid-row: 2; width: 86%; gap: 12px; }
+  .dream-row > .dream-copy { grid-column: 1; grid-row: 1; align-items: flex-start; padding: 0 8% 55px; text-align: left; }
+  .dream-row > .dream-gallery { grid-column: 1; grid-row: 2; width: 86%; gap: 12px; }
   .dream-gallery .timeline-photo:first-child, .dream-gallery .timeline-photo:last-child { transform: none; }
   .origin-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, auto); width: 82%; height: auto; gap: 10px; transform: none; }
   .origin-gallery .timeline-photo, .origin-gallery .timeline-photo:first-child { grid-row: auto; aspect-ratio: 2 / 3; }
