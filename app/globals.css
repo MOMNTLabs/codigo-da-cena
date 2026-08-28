@@ -283,9 +283,11 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .dream-row > .dream-gallery { grid-column: 1; grid-row: 2; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 86%; gap: 12px; }
   .dream-gallery .timeline-photo:first-child, .dream-gallery .timeline-photo:last-child { transform: none; }
   .dream-gallery .timeline-photo:last-child { grid-column: 1 / -1; width: calc(50% - 6px); justify-self: center; }
-  .origin-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(3, minmax(0, 1fr)); width: 82%; height: clamp(520px, 120vw, 780px); gap: 10px; transform: none; }
-  .origin-gallery .timeline-photo { grid-row: auto; aspect-ratio: auto; }
-  .origin-gallery .timeline-photo:first-child { grid-row: 1 / 3; aspect-ratio: auto; }
+  .origin-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; width: 82%; height: auto; gap: 10px; transform: none; }
+  .origin-gallery .timeline-photo,
+  .origin-gallery .timeline-photo:first-child { grid-row: auto; aspect-ratio: 9 / 16; }
+  .origin-gallery .timeline-photo:last-child { grid-column: 1 / -1; width: calc(50% - 5px); justify-self: center; }
+  .origin-gallery .timeline-photo:nth-child(2) img { object-position: center 20%; }
   .origin-gallery .timeline-photo figcaption { display: none; }
   .timeline-copy h3 { font-size: clamp(38px, 9vw, 70px); }
   .sttef-logo { width: 68%; }
