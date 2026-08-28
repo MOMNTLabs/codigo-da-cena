@@ -370,9 +370,9 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .duration-note { font-size: 21px; }
   .media-placeholder.portrait, .media-placeholder.landscape, .timeline-photo.portrait, .timeline-photo.landscape { width: 82%; }
   .trajectory-gallery { width: 100%; gap: 12px; }
-  .timeline-row > .sp-gallery { grid-template-columns: 1fr; width: 100%; gap: 14px; }
-  .sp-gallery .timeline-photo.landscape { width: 100%; }
-  .sp-gallery .timeline-photo.portrait { width: 68%; justify-self: center; }
+  .timeline-row > .sp-gallery { grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); width: 100%; gap: 10px; }
+  .sp-gallery .timeline-photo.landscape,
+  .sp-gallery .timeline-photo.portrait { width: 100%; justify-self: stretch; }
   .dream-row > .dream-gallery { width: 100%; gap: 9px; }
   .origin-gallery { width: 100%; gap: 8px; }
   .display-title { font-size: clamp(70px, 23vw, 120px); }
