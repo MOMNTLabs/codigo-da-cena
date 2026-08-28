@@ -141,11 +141,14 @@ export default function Home() {
               <figure className="timeline-photo"><img src="/sttef-live-crowd.webp" alt="Sttef tocando diante de uma grande pista" loading="lazy" decoding="async" /><figcaption>ESCALA / MOVIMENTO</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-large-event-02.webp" alt="Sttef tocando em meio a fachos de luz dourada" loading="lazy" decoding="async" /><figcaption>IMERSÃO / ENTREGA</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-large-energy.webp" alt="Sttef conduzindo o público com os braços levantados" loading="lazy" decoding="async" /><figcaption>ENERGIA / CONEXÃO</figcaption></figure>
-              <figure className="timeline-photo"><img src="/sttef-large-event-01.webp" alt="Sttef tocando em um grande palco durante o dia" loading="lazy" decoding="async" /><figcaption>PALCO / ALCANCE</figcaption></figure>
             </div>
           </article>
           <article className="timeline-row reveal">
-            <span className="timeline-year">EXPANSÃO</span><figure className="timeline-photo landscape sp-photo"><img src="/sttef-live-sao-paulo.webp" alt="Apresentação em São Paulo vista de trás da cabine" loading="lazy" decoding="async" /><figcaption>SÃO PAULO</figcaption></figure>
+            <span className="timeline-year">EXPANSÃO</span>
+            <div className="sp-gallery">
+              <figure className="timeline-photo landscape sp-photo"><img src="/sttef-live-sao-paulo.webp" alt="Apresentação em São Paulo vista de trás da cabine" loading="lazy" decoding="async" /><figcaption>SÃO PAULO</figcaption></figure>
+              <figure className="timeline-photo portrait sp-photo"><img src="/sttef-large-event-01.webp" alt="Sttef tocando em um grande palco durante o dia em São Paulo" loading="lazy" decoding="async" /><figcaption>SÃO PAULO / PALCO</figcaption></figure>
+            </div>
             <div className="timeline-copy"><span>02 / NOVOS TERRITÓRIOS</span><h3>EXPANDINDO</h3><p>SÃO PAULO / NOVAS CENAS</p></div>
           </article>
           <article className="timeline-row dream-row reveal">
