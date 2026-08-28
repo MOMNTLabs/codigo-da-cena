@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 
 const encounters = [
   ["01", "DIAGNÓSTICO E DIREÇÃO", "CLAREZA / PRIORIDADES", "Leitura do projeto atual, objetivos, travas e prioridades."],
@@ -11,9 +11,45 @@ const encounters = [
   ["06", "PLANO DE 90 DIAS", "DIREÇÃO / CONTINUIDADE", "Decisões, metas e ações para dar continuidade ao projeto."],
 ];
 
+const courseModules = [
+  "Diagnóstico e Direção",
+  "Fundamentos do DJ",
+  "Pesquisa Musical e Repertório",
+  "Identidade Musical",
+  "Construção de Set",
+  "As 5 Primeiras Músicas",
+  "Feeling e Leitura de Pista",
+  "Diferenciação",
+  "Primeiras Oportunidades",
+  "Posicionamento na Cena",
+  "Networking",
+  "Primeira Impressão e Presença",
+  "Comportamento Profissional",
+  "Como Agregar Valor à Festa",
+  "Movimentação de Público",
+  "Transformar Festa em Evento",
+  "Marketing Pré-Evento",
+  "Marketing Durante o Evento",
+  "Marketing Pós-Evento",
+  "Instagram de DJ",
+  "Parecer Profissional Antes de Ser Grande",
+  "Conteúdo sem Ter Datas",
+  "Comunidade e Apoio entre DJs",
+  "Agência e Management",
+  "O Lado do Contratante",
+  "Cachê e Cobrança",
+  "Quando Tocar de Graça",
+  "Como Aumentar o Cachê",
+  "Ser Chamado Novamente",
+  "Transformar 1 Oportunidade em 5",
+  "Se Manter na Cena",
+  "Carreira Estratégica",
+  "Plano de 90 Dias",
+];
+
 const questions = [
-  ["Preciso já saber tocar?", "Sim. O Código da Cena parte do princípio de que a base técnica já existe. O foco está no desenvolvimento da carreira e do projeto artístico."],
-  ["O programa ensina discotecagem?", "Não. O foco não está em ensinar a mixar, mas no que acontece em torno da construção de uma carreira."],
+  ["Preciso já saber tocar?", "Não. O programa também apresenta os fundamentos práticos da mixagem, embora o foco principal esteja no desenvolvimento da carreira e do projeto artístico."],
+  ["O programa ensina discotecagem?", "Sim. A mixagem entra como uma base prática do percurso; a maior parte do programa é dedicada a posicionamento, oportunidades e construção de carreira."],
   ["É presencial?", "Sim. A primeira edição será realizada presencialmente na Grande Vitória."],
   ["Existe garantia de tocar no The Bank?", "Não. Alguns participantes poderão ser selecionados de acordo com seu desenvolvimento ao longo do programa."],
   ["[PERGUNTA ADICIONAL]", "[RESPOSTA A INSERIR]"],
@@ -23,6 +59,7 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [sent, setSent] = useState(false);
+  const modulesSliderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 32);
@@ -47,6 +84,7 @@ export default function Home() {
   }
 
   const closeMenu = () => setMenuOpen(false);
+  const moveModules = (direction: number) => modulesSliderRef.current?.scrollBy({ left: direction * Math.min(modulesSliderRef.current.clientWidth * .82, 520), behavior: "smooth" });
 
   return (
     <main>
@@ -90,7 +128,22 @@ export default function Home() {
 
       <section className="intro section-pad" id="codigo">
         <p className="section-label reveal">01 / O CÓDIGO</p>
-        <p className="intro-text reveal">Um programa presencial para DJs com foco em desenvolver sua carreira, <em>como se posicionar e criar oportunidades.</em></p>
+        <div className="intro-copy">
+          <p className="intro-text reveal">Um programa presencial para DJs com foco em desenvolver sua carreira, <em>como se posicionar e criar oportunidades.</em></p>
+          <p className="intro-tech-note reveal">A mixagem entra apenas como base prática.</p>
+        </div>
+        <div className="modules-showcase reveal">
+          <div className="modules-head">
+            <div><span>CONTEÚDO DO PROGRAMA</span><strong>33 MÓDULOS</strong></div>
+            <div className="modules-controls">
+              <button type="button" onClick={() => moveModules(-1)} aria-label="Ver módulos anteriores"><i className="ui-arrow ui-arrow-left" aria-hidden="true" /></button>
+              <button type="button" onClick={() => moveModules(1)} aria-label="Ver próximos módulos"><i className="ui-arrow ui-arrow-right" aria-hidden="true" /></button>
+            </div>
+          </div>
+          <div className="modules-slider" ref={modulesSliderRef} tabIndex={0} aria-label="33 módulos do programa">
+            {courseModules.map((module, index) => <article className="module-card" key={module}><span>{String(index + 1).padStart(2, "0")}</span><h3>{module}</h3><small>CÓDIGO DA CENA</small></article>)}
+          </div>
+        </div>
       </section>
 
       <section className="manifesto section-pad">
@@ -189,7 +242,7 @@ export default function Home() {
             ['DURAÇÃO', '18 HORAS · 6 SEMANAS'],
             ['RITMO', '1 ENCONTRO POR SEMANA'],
             ['TURMA', 'ATÉ 12 DJs'],
-            ['CONTEÚDO', '6 MÓDULOS + PLANO DE 90 DIAS'],
+            ['CONTEÚDO', '33 MÓDULOS · 6 ENCONTROS'],
             ['ACOMPANHAMENTO', 'DIAGNÓSTICO + GRUPO FECHADO'],
           ].map(([item, value], i) => <div key={item}><span>0{i + 1}</span><p>{item}</p><b>{value}</b></div>)}
         </div>
