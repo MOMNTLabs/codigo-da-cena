@@ -181,7 +181,24 @@ export default function Home() {
         <div className="program-statement reveal">Entender onde você está hoje.<br />O que está te segurando.<br /><em>E o que precisa mudar para que o projeto avance.</em></div>
         <div className="program-facts reveal"><div><span>FORMATO</span><strong>PRESENCIAL</strong></div><div><span>LOCAL</span><strong>GRANDE VITÓRIA</strong></div></div>
         <div className="program-placeholders reveal">
-          {['QUANTIDADE DE ENCONTROS','DURAÇÃO','CALENDÁRIO','FORMATO','CONTEÚDO','INVESTIMENTO'].map((item, i) => <div key={item}><span>0{i + 1}</span><p>{item}</p><b>[A DEFINIR]</b></div>)}
+          {[
+            ['ENCONTROS', '6 ENCONTROS'],
+            ['DURAÇÃO', '18 HORAS · 6 SEMANAS'],
+            ['RITMO', '1 ENCONTRO POR SEMANA'],
+            ['TURMA', 'ATÉ 12 DJs'],
+            ['CONTEÚDO', '6 MÓDULOS + PLANO DE 90 DIAS'],
+            ['ACOMPANHAMENTO', 'DIAGNÓSTICO + GRUPO FECHADO'],
+          ].map(([item, value], i) => <div key={item}><span>0{i + 1}</span><p>{item}</p><b>{value}</b></div>)}
+        </div>
+        <div className="program-investment reveal">
+          <div>
+            <span>INVESTIMENTO / TURMA INAUGURAL</span>
+            <h3>R$ 1.497</h3>
+          </div>
+          <div className="program-investment-copy">
+            <p>O valor considera seis encontros presenciais, acompanhamento próximo e um grupo reduzido de até 12 DJs.</p>
+            <p>A entrada acontece depois de uma conversa breve, para entender se o momento e a proposta fazem sentido para os dois lados.</p>
+          </div>
         </div>
       </section>
 
