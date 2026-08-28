@@ -124,7 +124,12 @@ export default function Home() {
         </div>
         <div className="timeline">
           <article className="timeline-row reveal">
-            <span className="timeline-year">INÍCIO</span><div className="media-placeholder portrait origin-placeholder">[FOTO DE EVENTO MENOR]</div>
+            <span className="timeline-year">INÍCIO</span>
+            <div className="origin-gallery">
+              <figure className="timeline-photo"><img src="/sttef-small-event-01.webp" alt="Sttef tocando em um evento menor com iluminação vermelha" loading="lazy" decoding="async" /><figcaption>PROXIMIDADE / PISTA</figcaption></figure>
+              <figure className="timeline-photo"><img src="/sttef-small-event-02.webp" alt="Sttef tocando com fones em um espaço intimista" loading="lazy" decoding="async" /><figcaption>PRÁTICA / PRESENÇA</figcaption></figure>
+              <figure className="timeline-photo"><img src="/sttef-small-event-03.webp" alt="Sttef tocando em um evento diurno de menor escala" loading="lazy" decoding="async" /><figcaption>BASE / CONSTÂNCIA</figcaption></figure>
+            </div>
             <div className="timeline-copy"><span>00 / A BASE</span><h3>EVENTOS MENORES</h3><p>ONDE A PRESENÇA COMEÇOU A GANHAR FORMA</p></div>
           </article>
           <article className="timeline-row showcase-row reveal">
