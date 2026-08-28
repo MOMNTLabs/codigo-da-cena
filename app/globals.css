@@ -117,17 +117,17 @@ h1 { margin: 0; max-width: 1120px; font-size: clamp(56px, 8.1vw, 130px); line-he
 
 .behind { position: relative; min-height: 125vh; border-top: 1px solid var(--line); overflow: hidden; }
 .display-title { margin: 90px 0 0; font-size: clamp(76px, 12vw, 190px); line-height: .8; letter-spacing: -.07em; font-weight: 500; text-transform: uppercase; }
-.word-field { position: relative; height: clamp(650px, 70vw, 1000px); margin-top: 60px; }
-.word { position: absolute; font-size: clamp(18px, 3.8vw, 65px); line-height: 1; letter-spacing: -.04em; transition-delay: calc(var(--i, 0) * 60ms); }
-.w1 { top: 5%; left: 2%; font-size: clamp(34px, 7vw, 115px); }
-.w2 { top: 8%; right: 3%; font-family: Georgia, serif; font-style: italic; }
-.w3 { top: 28%; left: 28%; color: var(--acid); font-size: clamp(62px, 13vw, 210px); }
-.w4 { top: 51%; right: -1%; writing-mode: vertical-rl; font-size: clamp(20px, 3vw, 48px); }
-.w5 { top: 52%; left: 4%; font-size: clamp(55px, 10vw, 150px); }
-.w6 { top: 67%; left: 36%; font-family: Georgia, serif; font-style: italic; }
-.w7 { top: 80%; left: 3%; }
-.w8 { top: 85%; right: 25%; color: var(--acid); }
-.w9 { top: 74%; right: 2%; font-size: clamp(52px, 9vw, 145px); }
+.word-field { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: repeat(5, minmax(100px, 1fr)); align-items: center; gap: clamp(18px, 2vw, 34px); height: clamp(680px, 68vw, 980px); margin-top: 60px; }
+.word { position: relative; min-width: 0; font-size: clamp(18px, 3.2vw, 54px); line-height: 1; letter-spacing: -.04em; transition-delay: calc(var(--i, 0) * 60ms); }
+.w1 { grid-column: 1 / 10; grid-row: 1; font-size: clamp(34px, 6.5vw, 105px); }
+.w2 { grid-column: 10 / 13; grid-row: 1; justify-self: end; font-family: Georgia, serif; font-style: italic; }
+.w3 { grid-column: 2 / 10; grid-row: 2; color: var(--acid); font-size: clamp(62px, 12vw, 190px); }
+.w4 { grid-column: 11 / 13; grid-row: 2 / 5; justify-self: end; writing-mode: vertical-rl; font-size: clamp(20px, 2.6vw, 42px); }
+.w5 { grid-column: 1 / 10; grid-row: 3; font-size: clamp(55px, 9vw, 142px); }
+.w6 { grid-column: 5 / 8; grid-row: 4; justify-self: center; font-family: Georgia, serif; font-style: italic; }
+.w7 { grid-column: 1 / 4; grid-row: 4; }
+.w8 { grid-column: 8 / 11; grid-row: 4; justify-self: end; color: var(--acid); }
+.w9 { grid-column: 3 / 12; grid-row: 5; font-size: clamp(52px, 8.3vw, 135px); }
 .behind-note { margin: 0 0 0 51%; max-width: 530px; font-size: clamp(30px, 4vw, 64px); line-height: 1; letter-spacing: -.045em; }
 
 .program { background: var(--light); color: var(--dark-ink); }
@@ -272,7 +272,16 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .timeline-copy h3 { font-size: clamp(38px, 9vw, 70px); }
   .sttef-logo { width: 100%; }
   .behind { min-height: 1050px; }
-  .word-field { height: 720px; }
+  .word-field { grid-template-columns: repeat(6, minmax(0, 1fr)); grid-template-rows: repeat(8, auto); align-content: space-between; gap: 28px 10px; height: auto; min-height: 760px; }
+  .w1 { grid-column: 1 / -1; grid-row: 1; font-size: 9.2vw; }
+  .w2 { grid-column: 4 / -1; grid-row: 2; justify-self: end; }
+  .w3 { grid-column: 1 / 6; grid-row: 3; font-size: 18vw; }
+  .w4 { grid-column: 2 / -1; grid-row: 4; justify-self: end; writing-mode: horizontal-tb; font-size: 4.8vw; }
+  .w5 { grid-column: 1 / -1; grid-row: 5; font-size: 17vw; }
+  .w6 { grid-column: 3 / 6; grid-row: 6; justify-self: center; }
+  .w7 { grid-column: 1 / 4; grid-row: 7; }
+  .w8 { grid-column: 4 / -1; grid-row: 7; justify-self: end; }
+  .w9 { grid-column: 2 / -1; grid-row: 8; font-size: 15vw; }
   .behind-note { margin-left: 0; }
   .program-intro, .codes-head, .moment-grid, .experience-copy, .interest-head, .faq-layout { grid-template-columns: 1fr; }
   .program-intro { gap: 70px; }
@@ -308,13 +317,7 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .media-placeholder.portrait, .media-placeholder.landscape, .timeline-photo.portrait, .timeline-photo.landscape { width: 82%; }
   .trajectory-gallery { width: 100%; gap: 12px; }
   .display-title { font-size: clamp(70px, 23vw, 120px); }
-  .w1 { font-size: 9.5vw; }
-  .w3 { left: 4%; font-size: 18vw; }
-  .w4 { right: 1%; }
-  .w5 { font-size: 17vw; }
-  .w6 { left: 12%; }
-  .w8 { right: 5%; }
-  .w9 { right: 0; font-size: 15vw; }
+  .word-field { min-height: 700px; gap: 24px 8px; }
   .program-facts { grid-template-columns: 1fr; }
   .program-facts div + div { border-left: 0; border-top: 1px solid rgb(23 23 20 / .3); padding-left: 0; }
   .program-placeholders { grid-template-columns: 1fr; }
