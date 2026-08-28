@@ -170,7 +170,7 @@ export default function Home() {
         <p className="section-label reveal">07 / OS CÓDIGOS</p>
         <div className="codes-head reveal"><h2>UM SISTEMA.<br />NÃO UMA FÓRMULA.</h2><p>Princípios para ler a cena, tomar decisões e mover o projeto com intenção.</p></div>
         <div className="principle-list">
-          {principles.map(([number, title, copy]) => <article className="principle reveal" key={number}><span>{number}</span><h3>{title}</h3><p>{copy}</p><i>↘</i></article>)}
+          {principles.map(([number, title, copy]) => <article className="principle reveal" key={number}><span>{number}</span><h3>{title}</h3><p>{copy}</p><i aria-hidden="true" /></article>)}
         </div>
       </section>
 
