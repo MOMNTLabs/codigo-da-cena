@@ -90,7 +90,7 @@ export default function Home() {
 
       <section className="intro section-pad" id="codigo">
         <p className="section-label reveal">01 / O CÓDIGO</p>
-        <p className="intro-text reveal">Um programa presencial para DJs que já sabem tocar e querem entender o que realmente constrói uma carreira <em>dentro e fora da cena.</em></p>
+        <p className="intro-text reveal">Um programa presencial para DJs que querem desenvolver técnica, projeto e carreira <em>dentro e fora da cena.</em></p>
       </section>
 
       <section className="manifesto section-pad">
