@@ -163,9 +163,9 @@ h1 { margin: 0; max-width: 1120px; font-size: clamp(56px, 8.1vw, 130px); line-he
 .experience { position: relative; }
 .experience-visual { position: relative; height: 67vw; max-height: 900px; margin: 8vw 0 10vw; overflow: hidden; display: grid; place-items: center; background: radial-gradient(circle at center, #3a3a31, #131311 53%, #090909); border: 1px solid var(--line); }
 .experience-visual::before { content: ""; position: absolute; z-index: 1; inset: 0; background: linear-gradient(180deg, rgb(5 5 5 / .12), rgb(5 5 5 / .48)), repeating-linear-gradient(100deg, transparent 0 7%, rgb(213 250 66 / .045) 7.2% 7.35%); transform: scale(1.25) rotate(-4deg); }
-.experience-photo { position: absolute; z-index: 0; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 46%; filter: saturate(.76) contrast(1.1) brightness(.64); }
+.experience-photo { position: absolute; z-index: 0; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: grayscale(1) contrast(1.15) brightness(.62); }
 .experience-visual > span { position: absolute; z-index: 2; right: 18px; bottom: 18px; color: var(--muted); font-size: 9px; letter-spacing: .18em; }
-.bank-mark { position: relative; z-index: 2; color: var(--acid); font-size: clamp(100px, 22vw, 340px); line-height: .65; letter-spacing: -.09em; text-align: center; font-weight: 800; mix-blend-mode: screen; transform: skewY(-5deg); }
+.bank-logo { position: relative; z-index: 2; display: block; width: auto; height: min(70%, 640px); max-width: 70%; filter: invert(1); opacity: .96; }
 .experience-copy { display: grid; grid-template-columns: 1.3fr 1fr; gap: 8vw; align-items: start; }
 .experience-copy h2 { margin: 0; font-size: clamp(65px, 9vw, 145px); line-height: .82; letter-spacing: -.07em; font-weight: 500; text-transform: uppercase; }
 .experience-copy > div { max-width: 560px; }

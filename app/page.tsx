@@ -129,7 +129,7 @@ export default function Home() {
             <div className="timeline-copy"><span>01 / A ESCALA</span><h3>EVENTOS MAIORES</h3><p>PÚBLICO / PRESENÇA / CONSISTÊNCIA</p></div>
             <div className="trajectory-gallery">
               <figure className="timeline-photo"><img src="/sttef-large-crowd.webp" alt="Sttef no centro da pista durante um grande evento" loading="lazy" decoding="async" /><figcaption>PRESENÇA / PISTA</figcaption></figure>
-              <figure className="timeline-photo"><img src="/sttef-large-booth.webp" alt="Sttef tocando para uma pista cheia" loading="lazy" decoding="async" /><figcaption>ESCALA / MOVIMENTO</figcaption></figure>
+              <figure className="timeline-photo"><img src="/sttef-live-crowd.webp" alt="Sttef tocando diante de uma grande pista" loading="lazy" decoding="async" /><figcaption>ESCALA / MOVIMENTO</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-large-energy.webp" alt="Sttef conduzindo o público com os braços levantados" loading="lazy" decoding="async" /><figcaption>ENERGIA / CONEXÃO</figcaption></figure>
             </div>
           </article>
@@ -173,7 +173,7 @@ export default function Home() {
 
       <section className="experience section-pad" id="experiencia">
         <p className="section-label reveal">08 / EXPERIÊNCIA — THE BANK</p>
-        <div className="experience-visual reveal"><img className="experience-photo" src="/sttef-live-crowd.webp" alt="Sttef tocando diante de uma pista cheia" loading="lazy" decoding="async" /><div className="bank-mark">THE<br />BANK</div><span>STTEF / AO VIVO</span></div>
+        <div className="experience-visual reveal"><img className="experience-photo" src="/the-bank-industrial-club.webp" alt="Interior de um club underground com arquitetura industrial" loading="lazy" decoding="async" /><img className="bank-logo" src="/the-bank-logo.svg" alt="The Bank" loading="lazy" decoding="async" /><span>EXPERIÊNCIA / CLUB UNDERGROUND</span></div>
         <div className="experience-copy reveal">
           <h2>A cena não termina<br />na conversa.</h2>
           <div><p>O desenvolvimento também acontece quando o artista começa a ocupar os espaços que busca.</p><p>Participantes que se destacarem ao longo do processo poderão ser selecionados para oportunidades de apresentação no The Bank.</p><small>A seleção acontece a partir do desenvolvimento e desempenho durante o programa. Não se trata de uma garantia de booking.</small></div>
