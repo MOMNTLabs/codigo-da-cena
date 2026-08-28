@@ -95,6 +95,7 @@ export default function Home() {
 
       <section className="manifesto section-pad">
         <p className="section-label reveal">02 / MANIFESTO</p>
+        <p className="manifesto-question reveal">Aprendi a tocar, e agora?</p>
         <h2 className="manifesto-lead reveal">Existe uma parte da carreira que não está no set.</h2>
         <div className="manifesto-lines">
           <p className="reveal">Está em como você se posiciona.</p>

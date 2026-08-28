@@ -60,6 +60,8 @@ h1 { margin: 0; max-width: 1120px; font-size: clamp(56px, 8.1vw, 130px); line-he
 .intro-text em { color: var(--acid); font: italic 400 1em/1 Georgia, serif; }
 
 .manifesto { border-top: 1px solid var(--line); }
+.manifesto-question { margin: clamp(80px, 9vw, 140px) 0 0 17%; color: var(--acid); font: italic 400 clamp(32px, 4vw, 64px)/1 Georgia, serif; letter-spacing: -.04em; }
+.manifesto-question + .manifesto-lead { margin-top: clamp(45px, 5vw, 80px); }
 .manifesto-lead { margin: clamp(90px, 10vw, 160px) 0 clamp(120px, 14vw, 230px) 17%; max-width: 1000px; font-size: clamp(52px, 6.65vw, 106px); line-height: .94; letter-spacing: -.05em; font-weight: 500; }
 .manifesto-lines { margin-left: 34%; }
 .manifesto-lines p { margin: 0; padding: 22px 0; border-top: 1px solid var(--line); font-size: clamp(20px, 2.2vw, 36px); letter-spacing: -.025em; }
@@ -285,6 +287,7 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .eyebrow { max-width: 240px; }
   .intro { grid-template-columns: 1fr; align-content: center; gap: 70px; min-height: 90vh; }
   .intro-text { font-size: clamp(40px, 10.8vw, 72px); }
+  .manifesto-question { margin-left: 0; }
   .manifesto-lead { margin-left: 0; }
   .manifesto-lines { margin-left: 12%; }
   .manifesto-end { font-size: clamp(58px, 15vw, 110px); }
