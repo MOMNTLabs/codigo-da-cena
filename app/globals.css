@@ -107,6 +107,15 @@ h1 { margin: 0; max-width: 1120px; font-size: clamp(56px, 8.1vw, 130px); line-he
 .trajectory-gallery .timeline-photo:nth-child(even) { margin-top: clamp(34px, 3.5vw, 62px); }
 .trajectory-gallery .timeline-photo img { object-position: center; }
 .sp-photo img { object-position: center 50%; }
+.dream-row { min-height: clamp(720px, 74vw, 1060px); }
+.dream-copy { grid-column: 1; grid-row: 1; align-items: flex-start; padding: 12%; }
+.dream-copy h3 { max-width: 720px; font-size: clamp(48px, 5.8vw, 94px); }
+.dream-copy p { max-width: 470px; font-size: 11px; line-height: 1.65; }
+.dream-gallery { grid-column: 2; grid-row: 1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; gap: clamp(12px, 1.4vw, 24px); width: 80%; margin: auto; }
+.dream-gallery .timeline-photo { width: 100%; aspect-ratio: 9 / 16; margin: 0; transform: none; }
+.dream-gallery .timeline-photo:first-child { transform: translateY(-5%); }
+.dream-gallery .timeline-photo:last-child { transform: translateY(5%); }
+.dream-gallery .timeline-photo img { object-position: center; }
 .origin-placeholder { padding: 20px; text-align: center; line-height: 1.5; }
 .timeline-copy { display: flex; flex-direction: column; justify-content: center; padding: 10%; }
 .timeline-copy span { color: var(--acid); font-size: 9px; letter-spacing: .18em; }
@@ -269,6 +278,10 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .trajectory-gallery { grid-row: 2; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 82%; gap: 18px; }
   .trajectory-gallery .timeline-photo:first-child { grid-column: 1 / -1; }
   .trajectory-gallery .timeline-photo:nth-child(even) { margin-top: 0; }
+  .dream-row { padding: 80px 0 100px; }
+  .dream-copy { grid-column: 1; grid-row: 1; padding: 0 8% 55px; }
+  .dream-gallery { grid-column: 1; grid-row: 2; width: 86%; gap: 12px; }
+  .dream-gallery .timeline-photo:first-child, .dream-gallery .timeline-photo:last-child { transform: none; }
   .origin-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: 1fr; width: 88%; height: auto; gap: 10px; transform: none; }
   .origin-gallery .timeline-photo, .origin-gallery .timeline-photo:first-child { grid-row: 1; aspect-ratio: 2 / 3; }
   .origin-gallery .timeline-photo figcaption { display: none; }
@@ -321,6 +334,7 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .duration-note { font-size: 21px; }
   .media-placeholder.portrait, .media-placeholder.landscape, .timeline-photo.portrait, .timeline-photo.landscape { width: 82%; }
   .trajectory-gallery { width: 100%; gap: 12px; }
+  .dream-gallery { width: 100%; gap: 9px; }
   .origin-gallery { width: 100%; gap: 8px; }
   .display-title { font-size: clamp(70px, 23vw, 120px); }
   .word-field { min-height: 700px; gap: 24px 8px; }

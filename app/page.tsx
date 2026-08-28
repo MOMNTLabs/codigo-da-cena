@@ -130,11 +130,11 @@ export default function Home() {
               <figure className="timeline-photo"><img src="/sttef-small-event-02.webp" alt="Sttef tocando com fones em um espaço intimista" loading="lazy" decoding="async" /><figcaption>PRÁTICA / PRESENÇA</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-small-event-03.webp" alt="Sttef tocando em um evento diurno de menor escala" loading="lazy" decoding="async" /><figcaption>BASE / CONSTÂNCIA</figcaption></figure>
             </div>
-            <div className="timeline-copy"><span>00 / A BASE</span><h3>EVENTOS MENORES</h3><p>ONDE A PRESENÇA COMEÇOU A GANHAR FORMA</p></div>
+            <div className="timeline-copy"><span>00 / A BASE</span><h3>CONSTRUINDO</h3><p>OS PRIMEIROS ESPAÇOS ONDE A PRESENÇA GANHOU FORMA</p></div>
           </article>
           <article className="timeline-row showcase-row reveal">
             <span className="timeline-year">MOVIMENTO</span>
-            <div className="timeline-copy"><span>01 / A ESCALA</span><h3>EVENTOS MAIORES</h3><p>PÚBLICO / PRESENÇA / CONSISTÊNCIA</p></div>
+            <div className="timeline-copy"><span>01 / A ESCALA</span><h3>SOLIDIFICANDO</h3><p>PALCO / PÚBLICO / CONSISTÊNCIA</p></div>
             <div className="trajectory-gallery">
               <figure className="timeline-photo"><img src="/sttef-large-event-01.webp" alt="Sttef tocando em um grande palco durante o dia" loading="lazy" decoding="async" /><figcaption>PALCO / ALCANCE</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-live-crowd.webp" alt="Sttef tocando diante de uma grande pista" loading="lazy" decoding="async" /><figcaption>ESCALA / MOVIMENTO</figcaption></figure>
@@ -145,7 +145,15 @@ export default function Home() {
           </article>
           <article className="timeline-row reveal">
             <span className="timeline-year">EXPANSÃO</span><figure className="timeline-photo landscape sp-photo"><img src="/sttef-live-sao-paulo.webp" alt="Apresentação em São Paulo vista de trás da cabine" loading="lazy" decoding="async" /><figcaption>SÃO PAULO / AO VIVO</figcaption></figure>
-            <div className="timeline-copy"><span>02 / NOVOS ESPAÇOS</span><h3>SÃO PAULO</h3></div>
+            <div className="timeline-copy"><span>02 / NOVOS TERRITÓRIOS</span><h3>EXPANDINDO</h3><p>SÃO PAULO / NOVAS CENAS</p></div>
+          </article>
+          <article className="timeline-row dream-row reveal">
+            <span className="timeline-year">MARCO</span>
+            <div className="timeline-copy dream-copy"><span>03 / UM SONHO EM MOVIMENTO</span><h3>REALIZAÇÃO<br />DE UM SONHO</h3><p>DIVIDIR O LINE-UP COM REFERÊNCIAS DA CENA — E ENTENDER QUE O PROJETO JÁ ESTAVA OCUPANDO OUTRO LUGAR.</p></div>
+            <div className="dream-gallery">
+              <figure className="timeline-photo"><img src="/sttef-lineup-almare.webp" alt="Flyer do Almare com Sttef no line-up ao lado de atrações nacionais" loading="lazy" decoding="async" /><figcaption>LINE-UP / ALMARE</figcaption></figure>
+              <figure className="timeline-photo"><img src="/sttef-lineup-tech-house.webp" alt="Flyer do Tech House com Sttef no line-up ao lado de atrações nacionais" loading="lazy" decoding="async" /><figcaption>LINE-UP / TECH HOUSE</figcaption></figure>
+            </div>
           </article>
         </div>
         <div className="sttef reveal"><span>O PROJETO POR TRÁS DO MOVIMENTO</span><img className="sttef-logo" src="/sttef-logo.png" alt="STTEF" loading="lazy" decoding="async" /></div>
