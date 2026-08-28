@@ -47,6 +47,14 @@ const courseModules = [
   "Plano de 90 Dias",
 ];
 
+const moduleCoverImages = [
+  "/module-cover-01.webp",
+  "/module-cover-02.webp",
+  "/module-cover-03.webp",
+  "/module-cover-04.webp",
+  "/module-cover-05.webp",
+];
+
 const questions = [
   ["Preciso já saber tocar?", "Não. O programa também apresenta os fundamentos práticos da mixagem, embora o foco principal esteja no desenvolvimento da carreira e do projeto artístico."],
   ["O programa ensina discotecagem?", "Sim. A mixagem entra como uma base prática do percurso; a maior parte do programa é dedicada a posicionamento, oportunidades e construção de carreira."],
@@ -141,7 +149,10 @@ export default function Home() {
             </div>
           </div>
           <div className="modules-slider" ref={modulesSliderRef} tabIndex={0} aria-label="33 módulos do programa">
-            {courseModules.map((module, index) => <article className="module-card" key={module}><span>{String(index + 1).padStart(2, "0")}</span><h3>{module}</h3><small>CÓDIGO DA CENA</small></article>)}
+            {courseModules.map((module, index) => {
+              const cover = moduleCoverImages[index];
+              return <article className={`module-card ${cover ? "has-cover" : ""}`} key={module}>{cover && <img className="module-card-cover" src={cover} alt="" loading="lazy" decoding="async" />}<span>{String(index + 1).padStart(2, "0")}</span><h3>{module}</h3><small>CÓDIGO DA CENA</small></article>;
+            })}
           </div>
         </div>
       </section>
