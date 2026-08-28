@@ -175,7 +175,7 @@ h1 { margin: 0; max-width: 1120px; font-size: clamp(56px, 8.1vw, 130px); line-he
 .principle { position: relative; display: grid; grid-template-columns: 8% 44% 1fr 30px; align-items: center; min-width: 0; min-height: 150px; border-top: 1px solid var(--line); transition: color .25s ease, padding .25s ease; }
 .principle:last-child { border-bottom: 1px solid var(--line); }
 .principle > span { color: var(--muted); font-size: 10px; }
-.principle h3 { min-width: 0; max-width: 680px; margin: 0; overflow-wrap: anywhere; font-size: clamp(28px, 3.6vw, 58px); line-height: .92; letter-spacing: -.05em; font-weight: 500; }
+.principle h3 { min-width: 0; max-width: 680px; margin: 0; overflow-wrap: normal; word-break: normal; hyphens: none; font-size: clamp(28px, 3.6vw, 58px); line-height: .92; letter-spacing: -.05em; font-weight: 500; }
 .encounter-copy { min-width: 0; max-width: 430px; padding-right: 24px; }
 .encounter-copy small { display: block; margin-bottom: 10px; color: var(--acid); font-size: 8px; line-height: 1.4; letter-spacing: .16em; }
 .encounter-copy p { min-width: 0; margin: 0; overflow-wrap: anywhere; color: var(--muted); font-size: clamp(12px, .9vw, 15px); line-height: 1.45; }
@@ -359,7 +359,7 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .program-placeholders { grid-template-columns: 1fr; }
   .program-placeholders div:nth-child(even) { padding-left: 0; border-left: 0; }
   .codes-head h2 { font-size: clamp(58px, 17vw, 90px); }
-  .principle h3 { font-size: 9.5vw; }
+  .principle h3 { font-size: clamp(30px, 8vw, 44px); }
   .principle { grid-template-columns: 34px minmax(0, 1fr) 28px; }
   .experience-visual { height: 110vw; }
   .experience-copy h2 { font-size: 16vw; }
@@ -367,7 +367,7 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .interest-form { grid-template-columns: 1fr; }
   .wide-field, .submit-button { grid-column: 1; }
   .submit-button { margin-top: 10px; }
-  .faq-layout h2 { max-width: 100%; overflow-wrap: anywhere; font-size: 15vw; }
+  .faq-layout h2 { max-width: 100%; overflow-wrap: normal; word-break: normal; hyphens: none; font-size: clamp(42px, 11.5vw, 70px); }
   .faq-list summary { grid-template-columns: 34px 1fr 25px; min-height: 95px; }
   .footer-top { grid-template-columns: 1fr; }
   .footer-brand { grid-column: 1; width: min(82vw, 520px); }
