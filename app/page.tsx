@@ -129,6 +129,7 @@ export default function Home() {
               <figure className="timeline-photo"><img src="/sttef-small-event-01.webp" alt="Sttef tocando em um evento menor com iluminação vermelha" loading="lazy" decoding="async" /><figcaption>PROXIMIDADE / PISTA</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-small-event-02.webp" alt="Sttef tocando com fones em um espaço intimista" loading="lazy" decoding="async" /><figcaption>PRÁTICA / PRESENÇA</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-small-event-03.webp" alt="Sttef tocando em um evento diurno de menor escala" loading="lazy" decoding="async" /><figcaption>BASE / CONSTÂNCIA</figcaption></figure>
+              <figure className="timeline-photo"><img src="/sttef-small-event-04.webp" alt="Sttef tocando próximo ao público em um evento pequeno com luz vermelha" loading="lazy" decoding="async" /><figcaption>INTIMIDADE / PISTA</figcaption></figure>
             </div>
             <div className="timeline-copy"><span>00 / A BASE</span><h3>CONSTRUINDO</h3><p>OS PRIMEIROS ESPAÇOS ONDE A PRESENÇA GANHOU FORMA</p></div>
           </article>
@@ -136,6 +137,7 @@ export default function Home() {
             <span className="timeline-year">MOVIMENTO</span>
             <div className="timeline-copy"><span>01 / A ESCALA</span><h3>SOLIDIFICANDO</h3><p>PALCO / PÚBLICO / CONSISTÊNCIA</p></div>
             <div className="trajectory-gallery">
+              <figure className="timeline-photo"><img src="/sttef-large-event-04.webp" alt="Sttef tocando em um grande evento diurno diante de um palco colorido" loading="lazy" decoding="async" /><figcaption>PALCO / PRESENÇA</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-large-event-01.webp" alt="Sttef tocando em um grande palco durante o dia" loading="lazy" decoding="async" /><figcaption>PALCO / ALCANCE</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-live-crowd.webp" alt="Sttef tocando diante de uma grande pista" loading="lazy" decoding="async" /><figcaption>ESCALA / MOVIMENTO</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-large-event-02.webp" alt="Sttef tocando em meio a fachos de luz dourada" loading="lazy" decoding="async" /><figcaption>IMERSÃO / ENTREGA</figcaption></figure>
