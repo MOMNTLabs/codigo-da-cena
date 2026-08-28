@@ -90,7 +90,7 @@ export default function Home() {
 
       <section className="intro section-pad" id="codigo">
         <p className="section-label reveal">01 / O CÓDIGO</p>
-        <p className="intro-text reveal">Um programa presencial de desenvolvimento de carreira para DJs. A mixagem entra como base prática; o foco é construir e movimentar seu projeto <em>dentro e fora da cena.</em></p>
+        <p className="intro-text reveal">Um programa presencial para DJs com foco em desenvolver sua carreira, <em>como se posicionar e criar oportunidades.</em></p>
       </section>
 
       <section className="manifesto section-pad">
