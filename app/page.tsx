@@ -81,7 +81,7 @@ export default function Home() {
         <div className="hero-copy reveal in-view">
           <p className="eyebrow">DESENVOLVIMENTO DE CARREIRA PARA DJS · GRANDE VITÓRIA</p>
           <h1>O que vem depois<br />é o que define<br />sua carreira.</h1>
-          <p className="hero-statement">Saber mixar é o de menos.</p>
+          <p className="hero-statement">Mixar é técnica. Carreira é construção.</p>
         </div>
         <a className="hero-cta" href="#codigo">Conhecer <i className="ui-arrow ui-arrow-down" aria-hidden="true" /></a>
         <div className="hero-side" aria-hidden="true">PRESENCIAL · GRANDE VITÓRIA</div>

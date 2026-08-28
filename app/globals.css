@@ -278,7 +278,7 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .hero-video { object-position: center 58%; filter: saturate(.72) contrast(1.16) brightness(.6); }
   .hero-index { top: 82px; right: 18px; }
   h1 { font-size: clamp(50px, 15.5vw, 104px); line-height: .84; }
-  .hero-statement { display: block; margin: 24px 0 64px; max-width: 420px; font-size: clamp(28px, 5.3vw, 30px); letter-spacing: -.02em; }
+  .hero-statement { display: block; margin: 24px 0 64px; max-width: min(420px, calc(100vw - 36px)); overflow-wrap: normal; word-break: normal; hyphens: none; font-size: clamp(24px, 5.2vw, 30px); line-height: 1.08; letter-spacing: -.02em; }
   .hero-statement::before { display: none; }
   .hero-cta { left: 18px; right: auto; bottom: 27px; }
   .hero-side { display: none; }
