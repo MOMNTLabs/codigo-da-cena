@@ -110,9 +110,9 @@ h1 { margin: 0; max-width: 1120px; font-size: clamp(56px, 8.1vw, 130px); line-he
 .timeline-row.reverse > .media-placeholder { grid-column: 2; grid-row: 1; }
 .timeline-row.reverse > .timeline-photo { grid-column: 2; grid-row: 1; }
 .timeline-row.reverse > .timeline-copy { grid-column: 1; grid-row: 1; text-align: right; align-items: flex-end; }
-.sttef { border-top: 1px solid var(--line); padding-top: 80px; }
+.sttef { border-top: 1px solid var(--line); padding: clamp(80px, 8vw, 120px) 0 clamp(70px, 8vw, 120px); }
 .sttef span { display: block; margin-bottom: 26px; color: var(--muted); font-size: 9px; letter-spacing: .18em; }
-.sttef-logo { display: block; width: min(100%, 1500px); height: auto; }
+.sttef-logo { display: block; width: min(72%, 900px); height: auto; margin-inline: auto; }
 
 .behind { position: relative; min-height: 125vh; border-top: 1px solid var(--line); overflow: hidden; }
 .display-title { margin: 90px 0 0; font-size: clamp(76px, 12vw, 190px); line-height: .8; letter-spacing: -.07em; font-weight: 500; text-transform: uppercase; }
@@ -258,7 +258,7 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .trajectory-gallery .timeline-photo:first-child { grid-column: 1 / -1; }
   .trajectory-gallery .timeline-photo:nth-child(2) { margin-top: 0; }
   .timeline-copy h3 { font-size: clamp(38px, 9vw, 70px); }
-  .sttef-logo { width: 100%; }
+  .sttef-logo { width: 68%; }
   .behind { min-height: 1050px; }
   .word-field { grid-template-columns: repeat(6, minmax(0, 1fr)); grid-template-rows: repeat(8, auto); align-content: space-between; gap: 28px 10px; height: auto; min-height: 760px; }
   .w1 { grid-column: 1 / -1; grid-row: 1; font-size: 9.2vw; }
