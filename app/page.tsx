@@ -80,8 +80,8 @@ export default function Home() {
         <div className="hero-index" aria-hidden="true">CD.C / 001</div>
         <div className="hero-copy reveal in-view">
           <p className="eyebrow">DESENVOLVIMENTO DE CARREIRA PARA DJS · GRANDE VITÓRIA</p>
-          <h1>O que vem depois<br />é o que define<br />sua carreira.</h1>
-          <p className="hero-statement">Saber mixar é o de menos.</p>
+          <h1>Mixar é técnica.<br />Carreira é construção.</h1>
+          <p className="hero-statement">Aprendi a tocar e agora?</p>
         </div>
         <a className="hero-cta" href="#codigo">Conhecer <i className="ui-arrow ui-arrow-down" aria-hidden="true" /></a>
         <div className="hero-side" aria-hidden="true">PRESENCIAL · GRANDE VITÓRIA</div>
