@@ -128,7 +128,7 @@ h1 { margin: 0; max-width: 1120px; font-size: clamp(56px, 8.1vw, 130px); line-he
 .w7 { grid-column: 1 / 4; grid-row: 4; }
 .w8 { grid-column: 8 / 11; grid-row: 4; justify-self: end; color: var(--acid); }
 .w9 { grid-column: 3 / 12; grid-row: 5; font-size: clamp(52px, 8.3vw, 135px); }
-.behind-note { margin: 0 0 0 51%; max-width: 530px; font-size: clamp(30px, 4vw, 64px); line-height: 1; letter-spacing: -.045em; }
+.behind-note { margin: clamp(100px, 11vw, 170px) 0 0 auto; max-width: min(49%, 620px); border-top: 1px solid var(--line); padding-top: clamp(28px, 3vw, 48px); font-size: clamp(30px, 4vw, 64px); line-height: 1; letter-spacing: -.045em; text-align: right; }
 
 .program { background: var(--light); color: var(--dark-ink); }
 .program-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 5vw; margin-top: 9vw; }
@@ -282,7 +282,7 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .w7 { grid-column: 1 / 4; grid-row: 7; }
   .w8 { grid-column: 4 / -1; grid-row: 7; justify-self: end; }
   .w9 { grid-column: 2 / -1; grid-row: 8; font-size: 15vw; }
-  .behind-note { margin-left: 0; }
+  .behind-note { margin-top: 90px; margin-left: 0; max-width: 100%; padding-top: 28px; text-align: left; }
   .program-intro, .codes-head, .moment-grid, .experience-copy, .interest-head, .faq-layout { grid-template-columns: 1fr; }
   .program-intro { gap: 70px; }
   .program-intro h2 { font-size: clamp(78px, 21vw, 150px); }
