@@ -172,15 +172,18 @@ h1 { margin: 0; max-width: 1120px; font-size: clamp(56px, 8.1vw, 130px); line-he
 .codes-head { display: grid; grid-template-columns: 2fr 1fr; align-items: end; gap: 6vw; margin: 9vw 0 8vw; }
 .codes-head h2 { margin: 0; font-size: clamp(65px, 10vw, 160px); line-height: .82; letter-spacing: -.07em; font-weight: 500; }
 .codes-head p { margin: 0; max-width: 360px; color: #c7c6bf; font: italic 400 clamp(20px, 2.1vw, 34px)/1.2 Georgia, serif; }
-.principle { position: relative; display: grid; grid-template-columns: 8% 47% 1fr 30px; align-items: center; min-width: 0; min-height: 134px; border-top: 1px solid var(--line); transition: color .25s ease, padding .25s ease; }
+.principle { position: relative; display: grid; grid-template-columns: 8% 44% 1fr 30px; align-items: center; min-width: 0; min-height: 150px; border-top: 1px solid var(--line); transition: color .25s ease, padding .25s ease; }
 .principle:last-child { border-bottom: 1px solid var(--line); }
 .principle > span { color: var(--muted); font-size: 10px; }
-.principle h3 { min-width: 0; margin: 0; overflow-wrap: anywhere; font-size: clamp(30px, 4.3vw, 70px); line-height: .9; letter-spacing: -.05em; font-weight: 500; }
-.principle p { min-width: 0; margin: 0; overflow-wrap: anywhere; color: var(--muted); font-size: 9px; line-height: 1.5; letter-spacing: .14em; }
+.principle h3 { min-width: 0; max-width: 680px; margin: 0; overflow-wrap: anywhere; font-size: clamp(28px, 3.6vw, 58px); line-height: .92; letter-spacing: -.05em; font-weight: 500; }
+.encounter-copy { min-width: 0; max-width: 430px; padding-right: 24px; }
+.encounter-copy small { display: block; margin-bottom: 10px; color: var(--acid); font-size: 8px; line-height: 1.4; letter-spacing: .16em; }
+.encounter-copy p { min-width: 0; margin: 0; overflow-wrap: anywhere; color: var(--muted); font-size: clamp(12px, .9vw, 15px); line-height: 1.45; }
 .principle i { position: relative; display: block; width: 22px; height: 22px; justify-self: end; color: currentColor; }
 .principle i::before { content: ""; position: absolute; left: 0; top: 10px; width: 22px; height: 1px; background: currentColor; transform: rotate(45deg); transform-origin: center; }
 .principle i::after { content: ""; position: absolute; right: 1px; bottom: 1px; width: 8px; height: 8px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; }
 .principle:hover { padding-left: 1.5%; color: var(--acid); }
+.codes-closing { width: min(570px, 48%); margin: 7vw 0 0 auto; color: #c7c6bf; font: italic 400 clamp(22px, 2.4vw, 38px)/1.2 Georgia, serif; }
 
 .experience { position: relative; }
 .experience-visual { position: relative; height: 67vw; max-height: 900px; margin: 8vw 0 10vw; overflow: hidden; display: grid; place-items: center; background: radial-gradient(circle at center, #3a3a31, #131311 53%, #090909); border: 1px solid var(--line); }
@@ -320,8 +323,9 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .program-investment { grid-template-columns: 1fr; gap: 55px; }
   .codes-head { gap: 50px; }
   .principle { grid-template-columns: 42px 1fr 28px; padding: 24px 0; }
-  .principle p { grid-column: 2 / -1; margin-top: 18px; }
+  .encounter-copy { grid-column: 2 / -1; margin-top: 18px; padding-right: 0; }
   .principle i { grid-column: 3; grid-row: 1; }
+  .codes-closing { width: min(570px, 100%); margin-top: 70px; }
   .experience-visual { height: 85vw; }
   .experience-copy { gap: 65px; }
   .interest-head { gap: 50px; }

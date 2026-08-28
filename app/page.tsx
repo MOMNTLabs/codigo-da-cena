@@ -2,14 +2,13 @@
 
 import { FormEvent, useEffect, useState } from "react";
 
-const principles = [
-  ["01", "POSICIONAMENTO", "[COMO O PROJETO SE APRESENTA E OCUPA ESPAÇO]"],
-  ["02", "RELAÇÕES", "[CONEXÕES, TROCAS E PRESENÇA NA CENA]"],
-  ["03", "BOOKING", "[OPORTUNIDADES, ABORDAGEM E CONTINUIDADE]"],
-  ["04", "IMAGEM", "[PERCEPÇÃO, IDENTIDADE E COERÊNCIA]"],
-  ["05", "COMUNICAÇÃO", "[O QUE O PROJETO DIZ ANTES E DEPOIS DO SET]"],
-  ["06", "PROFISSIONALISMO", "[PROCESSO, ENTREGA E CONFIANÇA]"],
-  ["07", "CRESCIMENTO", "[DECISÕES QUE CRIAM O PRÓXIMO MOVIMENTO]"],
+const encounters = [
+  ["01", "DIAGNÓSTICO E DIREÇÃO", "CLAREZA / PRIORIDADES", "Leitura do projeto atual, objetivos, travas e prioridades."],
+  ["02", "POSICIONAMENTO E IDENTIDADE", "POSICIONAMENTO / IMAGEM", "Proposta artística, diferenciação, narrativa e coerência de imagem."],
+  ["03", "RELAÇÕES E PRESENÇA NA CENA", "RELAÇÕES / PRESENÇA", "Networking, comportamento, trocas e construção de confiança."],
+  ["04", "COMUNICAÇÃO E MOVIMENTO", "COMUNICAÇÃO / CONTEÚDO", "Presença digital e comunicação antes e depois do set."],
+  ["05", "BOOKING E PROFISSIONALISMO", "BOOKING / NEGOCIAÇÃO", "Abordagem, timing, cachê, negociação, processo e entrega."],
+  ["06", "PLANO DE 90 DIAS", "DIREÇÃO / CONTINUIDADE", "Decisões, metas e ações para dar continuidade ao projeto."],
 ];
 
 const questions = [
@@ -203,11 +202,12 @@ export default function Home() {
       </section>
 
       <section className="codes section-pad">
-        <p className="section-label reveal">07 / OS CÓDIGOS</p>
-        <div className="codes-head reveal"><h2>UM SISTEMA.<br />NÃO UMA FÓRMULA.</h2><p>Princípios para ler a cena, tomar decisões e mover o projeto com intenção.</p></div>
+        <p className="section-label reveal">07 / OS ENCONTROS</p>
+        <div className="codes-head reveal"><h2>UM PERCURSO.<br />NÃO UMA FÓRMULA.</h2><p>Cada encontro parte do momento real do projeto e termina com decisões aplicáveis.</p></div>
         <div className="principle-list">
-          {principles.map(([number, title, copy]) => <article className="principle reveal" key={number}><span>{number}</span><h3>{title}</h3><p>{copy}</p><i aria-hidden="true" /></article>)}
+          {encounters.map(([number, title, codes, copy]) => <article className="principle reveal" key={number}><span>{number}</span><h3>{title}</h3><div className="encounter-copy"><small>{codes}</small><p>{copy}</p></div><i aria-hidden="true" /></article>)}
         </div>
+        <p className="codes-closing reveal">O plano de 90 dias transforma essa leitura em decisões, prioridades e movimento.</p>
       </section>
 
       <section className="experience section-pad" id="experiencia">
