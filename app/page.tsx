@@ -135,7 +135,7 @@ export default function Home() {
           </article>
           <article className="timeline-row reveal">
             <span className="timeline-year">EXPANSÃO</span><figure className="timeline-photo landscape sp-photo"><img src="/sttef-live-sao-paulo.webp" alt="Apresentação em São Paulo vista de trás da cabine" loading="lazy" decoding="async" /><figcaption>SÃO PAULO / AO VIVO</figcaption></figure>
-            <div className="timeline-copy"><span>02 / NOVOS ESPAÇOS</span><h3>SÃO PAULO</h3><p>[EVENTO / DATA]</p></div>
+            <div className="timeline-copy"><span>02 / NOVOS ESPAÇOS</span><h3>SÃO PAULO</h3></div>
           </article>
         </div>
         <div className="sttef reveal"><span>O PROJETO POR TRÁS DO MOVIMENTO</span><img className="sttef-logo" src="/sttef-logo.png" alt="STTEF" loading="lazy" decoding="async" /></div>
