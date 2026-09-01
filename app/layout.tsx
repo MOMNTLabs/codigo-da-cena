@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const publicDomain = process.env.RAILWAY_PUBLIC_DOMAIN;
+
 export const metadata: Metadata = {
   title: "Código da Cena — Desenvolvimento de carreira para DJs",
   description: "Programa presencial de desenvolvimento de carreira para DJs na Grande Vitória.",
-  metadataBase: new URL("https://codigo-da-cena.momnt-br.chatgpt.site"),
+  metadataBase: new URL(
+    publicDomain ? `https://${publicDomain}` : "http://localhost:3000",
+  ),
   openGraph: {
     title: "Código da Cena — Desenvolvimento de carreira para DJs",
     description: "Programa presencial de desenvolvimento de carreira para DJs na Grande Vitória.",

@@ -38,3 +38,7 @@ yarn-error.log*
 /.wrangler/
 /outputs/
 /work/
+
+# local analysis and previous Sites deployment packages
+/.analysis-sheet/
+/site-build.tar.gz
