@@ -92,7 +92,7 @@ export default function Home() {
   }
 
   const closeMenu = () => setMenuOpen(false);
-  const moveModules = (direction: number) => modulesSliderRef.current?.scrollBy({ left: direction * Math.min(modulesSliderRef.current.clientWidth * .82, 520), behavior: "smooth" });
+  const moveModules = (direction: number) => modulesSliderRef.current?.scrollBy({ left: direction * modulesSliderRef.current.clientWidth * .78, behavior: "smooth" });
 
   return (
     <main>
@@ -148,10 +148,11 @@ export default function Home() {
               <button type="button" onClick={() => moveModules(1)} aria-label="Ver próximos módulos"><i className="ui-arrow ui-arrow-right" aria-hidden="true" /></button>
             </div>
           </div>
-          <div className="modules-slider" ref={modulesSliderRef} tabIndex={0} aria-label="33 módulos do programa">
+          <div className="modules-slider" ref={modulesSliderRef} tabIndex={0} aria-label="33 módulos do programa" role="list">
             {courseModules.map((module, index) => {
               const cover = moduleCoverImages[index];
-              return <article className={`module-card ${cover ? "has-cover" : ""}`} key={module}>{cover && <img className="module-card-cover" src={cover} alt="" loading="lazy" decoding="async" />}<span>{String(index + 1).padStart(2, "0")}</span><h3>{module}</h3><small>CÓDIGO DA CENA</small></article>;
+              const moduleNumber = String(index + 1).padStart(2, "0");
+              return <article className={`module-card ${cover ? "has-cover" : ""}`} data-module-number={moduleNumber} role="listitem" key={module}>{cover && <img className="module-card-cover" src={cover} alt="" loading="lazy" decoding="async" />}<span>{moduleNumber}</span><div className="module-card-copy"><h3>{module}</h3><small>CÓDIGO DA CENA · MÓDULO {moduleNumber}</small></div></article>;
             })}
           </div>
         </div>
