@@ -67,7 +67,9 @@ export default function Home() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [sent, setSent] = useState(false);
+  const [moduleStep, setModuleStep] = useState(0);
   const modulesSliderRef = useRef<HTMLDivElement>(null);
+  const moduleStepCount = 6;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 32);
@@ -92,7 +94,21 @@ export default function Home() {
   }
 
   const closeMenu = () => setMenuOpen(false);
-  const moveModules = (direction: number) => modulesSliderRef.current?.scrollBy({ left: direction * modulesSliderRef.current.clientWidth * .78, behavior: "smooth" });
+  const scrollModulesTo = (step: number) => {
+    const slider = modulesSliderRef.current;
+    if (!slider) return;
+    const nextStep = Math.max(0, Math.min(moduleStepCount - 1, step));
+    const maxScroll = slider.scrollWidth - slider.clientWidth;
+    slider.scrollTo({ left: maxScroll * (nextStep / (moduleStepCount - 1)), behavior: "smooth" });
+    setModuleStep(nextStep);
+  };
+  const moveModules = (direction: number) => scrollModulesTo(moduleStep + direction);
+  const updateModuleStep = () => {
+    const slider = modulesSliderRef.current;
+    if (!slider) return;
+    const maxScroll = slider.scrollWidth - slider.clientWidth;
+    setModuleStep(maxScroll > 0 ? Math.round((slider.scrollLeft / maxScroll) * (moduleStepCount - 1)) : 0);
+  };
 
   return (
     <main>
@@ -148,12 +164,15 @@ export default function Home() {
               <button type="button" onClick={() => moveModules(1)} aria-label="Ver próximos módulos"><i className="ui-arrow ui-arrow-right" aria-hidden="true" /></button>
             </div>
           </div>
-          <div className="modules-slider" ref={modulesSliderRef} tabIndex={0} aria-label="33 módulos do programa" role="list">
+          <div className="modules-slider" ref={modulesSliderRef} onScroll={updateModuleStep} tabIndex={0} aria-label="33 módulos do programa" role="list">
             {courseModules.map((module, index) => {
               const cover = moduleCoverImages[index];
               const moduleNumber = String(index + 1).padStart(2, "0");
-              return <article className={`module-card ${cover ? "has-cover" : ""}`} data-module-number={moduleNumber} role="listitem" key={module}>{cover && <img className="module-card-cover" src={cover} alt="" loading="lazy" decoding="async" />}<span>{moduleNumber}</span><div className="module-card-copy"><h3>{module}</h3><small>CÓDIGO DA CENA · MÓDULO {moduleNumber}</small></div></article>;
+              return <article className={`module-card ${cover ? "has-cover" : ""}`} data-module-number={moduleNumber} role="listitem" tabIndex={0} key={module}>{cover && <img className="module-card-cover" src={cover} alt="" loading="lazy" decoding="async" />}<span>{moduleNumber}</span><div className="module-card-copy"><h3>{module}</h3><small>FORMAÇÃO PRESENCIAL · MÓDULO {moduleNumber}</small></div></article>;
             })}
+          </div>
+          <div className="modules-pagination" aria-label="Posição na lista de módulos">
+            {Array.from({ length: moduleStepCount }, (_, index) => <button className={moduleStep === index ? "is-active" : ""} type="button" aria-label={`Ir para o grupo ${index + 1} de módulos`} aria-current={moduleStep === index ? "true" : undefined} onClick={() => scrollModulesTo(index)} key={index} />)}
           </div>
         </div>
       </section>
