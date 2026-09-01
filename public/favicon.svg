@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Código da Cena">
+  <rect width="512" height="512" rx="88" fill="#0d0d0c"/>
+  <path
+    d="M376 150a164 164 0 1 0 0 212"
+    fill="none"
+    stroke="#f4f2ec"
+    stroke-linecap="square"
+    stroke-width="64"
+  />
+  <circle cx="405" cy="107" r="22" fill="#c9ff21"/>
+</svg>

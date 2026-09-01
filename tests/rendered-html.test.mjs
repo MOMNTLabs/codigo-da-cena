@@ -31,6 +31,7 @@ test("server-renders the Código da Cena landing page", async () => {
   const html = await response.text();
   assert.match(html, /<html lang="pt-BR">/i);
   assert.match(html, /<title>Código da Cena/i);
+  assert.match(html, /<link rel="icon" href="\/favicon\.svg" type="image\/svg\+xml"/i);
   assert.match(html, /O que vem depois/i);
   assert.match(html, /33 MÓDULOS/i);
   assert.match(html, /Mixar é técnica\. Carreira é construção\./i);
