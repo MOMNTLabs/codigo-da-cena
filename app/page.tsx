@@ -8,14 +8,14 @@ const programAxes = [
   ["03", "RELAÇÕES E PRESENÇA NA CENA", "RELAÇÕES / PRESENÇA", "Networking, comportamento, trocas e construção de confiança."],
   ["04", "COMUNICAÇÃO E MOVIMENTO", "COMUNICAÇÃO / CONTEÚDO", "Presença digital e comunicação antes e depois do set."],
   ["05", "BOOKING E PROFISSIONALISMO", "BOOKING / NEGOCIAÇÃO", "Abordagem, timing, cachê, negociação, processo e entrega."],
-  ["06", "PLANO DE 90 DIAS", "DIREÇÃO / CONTINUIDADE", "Decisões, metas e ações para dar continuidade ao projeto."],
 ];
 
 const founderBonuses = [
-  ["01", "DIAGNÓSTICO DE INSTAGRAM", "Leitura individual de bio, imagem, organização e posicionamento."],
-  ["02", "ANÁLISE DE UM SET GRAVADO", "Feedback individual sobre técnica, seleção musical e construção de narrativa."],
-  ["03", "COMUNIDADE EXCLUSIVA", "Um espaço fechado para troca de músicas, feedback, apoio e oportunidades."],
-  ["04", "ACESSO ÀS AULAS GRAVADAS", "Gravação profissional dos encontros, disponível apenas para os alunos reassistirem."],
+  ["01", "PLANO DE 90 DIAS PERSONALIZADO", "Direção, prioridades e ações para os próximos três meses de carreira."],
+  ["02", "DIAGNÓSTICO DE INSTAGRAM", "Leitura individual de bio, imagem, organização e posicionamento."],
+  ["03", "ANÁLISE DE UM SET GRAVADO", "Feedback individual sobre técnica, seleção musical e construção de narrativa."],
+  ["04", "COMUNIDADE EXCLUSIVA", "Um espaço fechado para troca de músicas, feedback, apoio e oportunidades."],
+  ["05", "ACESSO ÀS AULAS GRAVADAS", "Gravação profissional dos encontros, disponível apenas para os alunos reassistirem."],
 ];
 
 const courseModules = [
@@ -298,11 +298,10 @@ export default function Home() {
 
       <section className="codes section-pad">
         <p className="section-label reveal">07 / OS EIXOS</p>
-        <div className="codes-head reveal"><h2>UM PERCURSO.<br />NÃO UMA FÓRMULA.</h2><p>Seis eixos organizam os 33 módulos distribuídos ao longo dos dois domingos.</p></div>
+        <div className="codes-head reveal"><h2>UM PERCURSO.<br />NÃO UMA FÓRMULA.</h2><p>Cinco eixos organizam os 33 módulos distribuídos ao longo dos dois domingos.</p></div>
         <div className="principle-list">
           {programAxes.map(([number, title, codes, copy]) => <article className="principle reveal" key={number}><span>{number}</span><h3>{title}</h3><div className="encounter-copy"><small>{codes}</small><p>{copy}</p></div><i aria-hidden="true" /></article>)}
         </div>
-        <p className="codes-closing reveal">O plano de 90 dias transforma essa leitura em decisões, prioridades e movimento.</p>
         <div className="founder-bonuses reveal">
           <div className="founder-bonuses-head">
             <span>BÔNUS / TURMA FUNDADORA</span>
