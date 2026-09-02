@@ -60,7 +60,6 @@ const questions = [
   ["O programa ensina discotecagem?", "Sim. A mixagem entra como uma base prática do percurso; a maior parte do programa é dedicada a posicionamento, oportunidades e construção de carreira."],
   ["É presencial?", "Sim. A primeira edição será realizada presencialmente na Grande Vitória."],
   ["Existe garantia de tocar no The Bank?", "Não. Alguns participantes poderão ser selecionados de acordo com seu desenvolvimento ao longo do programa."],
-  ["[PERGUNTA ADICIONAL]", "[RESPOSTA A INSERIR]"],
 ];
 
 export default function Home() {

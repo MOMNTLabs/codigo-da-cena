@@ -271,7 +271,7 @@ h1 { margin: 0; max-width: 1120px; font-size: clamp(56px, 8.1vw, 130px); line-he
 
 footer { padding: 8vw var(--gutter) 25px; background: #080808; }
 .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4vw; align-items: start; padding-bottom: 9vw; }
-.footer-brand { display: block; width: min(68%, 520px); }
+.footer-brand { display: block; width: min(36%, 300px); }
 .footer-brand-logo { display: block; width: 100%; height: auto; }
 .footer-top > div { display: flex; flex-direction: column; gap: 12px; }
 .footer-top span { color: var(--muted); font-size: 9px; letter-spacing: .17em; }
@@ -440,7 +440,7 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .faq-layout h2 { max-width: 100%; overflow-wrap: normal; word-break: normal; hyphens: none; font-size: clamp(42px, 11.5vw, 70px); }
   .faq-list summary { grid-template-columns: 34px 1fr 25px; min-height: 95px; }
   .footer-top { grid-template-columns: 1fr; }
-  .footer-brand { grid-column: 1; width: min(62vw, 340px); }
+  .footer-brand { grid-column: 1; width: min(42vw, 220px); }
   .footer-bottom { grid-template-columns: 1fr; gap: 14px; }
 }
 
