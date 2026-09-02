@@ -128,7 +128,7 @@ export default function Home() {
   return (
     <main>
       <header className={`site-header ${scrolled ? "is-scrolled" : ""} ${menuOpen ? "menu-active" : ""}`}>
-        <a className="wordmark" href="#top" onClick={closeMenu} aria-label="Código da Cena — início"><img className="header-brand-logo" src="/codigo-da-cena-profile-white.png" alt="" aria-hidden="true" /></a>
+        <a className="wordmark" href="#top" onClick={closeMenu} aria-label="Código da Cena — início"><img className="header-brand-logo" src="/codigo-da-cena-logo-white.png" alt="" aria-hidden="true" /></a>
         <nav aria-label="Navegação principal">
           <a href="#codigo">O Código</a><a href="#programa">Programa</a><a href="#experiencia">Experiência</a><a href="#contato">Contato</a>
           <a className="nav-cta" href="#codigo">Conhecer <i className="ui-arrow ui-arrow-se" aria-hidden="true" /></a>
@@ -358,7 +358,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <div className="footer-top"><a className="footer-brand" href="#top" aria-label="Código da Cena — voltar ao início"><img className="footer-brand-logo" src="/codigo-da-cena-profile-white.png" alt="" aria-hidden="true" loading="lazy" decoding="async" /></a><div><span>LOCAL</span><p>Grande Vitória · ES</p></div><div><span>ENCONTRE</span><a href="#">Instagram <i className="ui-arrow ui-arrow-ne" aria-hidden="true" /></a><a href="mailto:contato@codigodacena.com">Contato <i className="ui-arrow ui-arrow-ne" aria-hidden="true" /></a></div></div>
+        <div className="footer-top"><a className="footer-brand" href="#top" aria-label="Código da Cena — voltar ao início"><img className="footer-brand-logo" src="/codigo-da-cena-logo-white.png" alt="" aria-hidden="true" loading="lazy" decoding="async" /></a><div><span>LOCAL</span><p>Grande Vitória · ES</p></div><div><span>ENCONTRE</span><a href="#">Instagram <i className="ui-arrow ui-arrow-ne" aria-hidden="true" /></a><a href="mailto:contato@codigodacena.com">Contato <i className="ui-arrow ui-arrow-ne" aria-hidden="true" /></a></div></div>
         <div className="footer-bottom"><span>© 2026 CÓDIGO DA CENA</span><span>DESENVOLVIMENTO DE CARREIRA PARA DJS</span><a href="#top">VOLTAR AO TOPO <i className="ui-arrow ui-arrow-up" aria-hidden="true" /></a></div>
       </footer>
     </main>
