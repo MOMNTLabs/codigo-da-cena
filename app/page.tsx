@@ -11,12 +11,21 @@ const programAxes = [
 ];
 
 const founderBonuses = [
-  ["01", "PLANO DE 90 DIAS PERSONALIZADO", "Direção, prioridades e ações para os próximos três meses de carreira."],
-  ["02", "DIAGNÓSTICO DE INSTAGRAM", "Leitura individual de bio, imagem, organização e posicionamento."],
-  ["03", "ANÁLISE DE UM SET GRAVADO", "Feedback individual sobre técnica, seleção musical e construção de narrativa."],
-  ["04", "COMUNIDADE EXCLUSIVA", "Um espaço fechado para troca de músicas, feedback, apoio e oportunidades."],
-  ["05", "ACESSO ÀS AULAS GRAVADAS", "Gravação profissional dos encontros, disponível apenas para os alunos reassistirem."],
+  ["01", "PLANO DE 90 DIAS PERSONALIZADO", "Direção, prioridades e ações para os próximos três meses de carreira.", "route"],
+  ["02", "DIAGNÓSTICO DE INSTAGRAM", "Leitura individual de bio, imagem, organização e posicionamento.", "profile"],
+  ["03", "ANÁLISE DE UM SET GRAVADO", "Feedback individual sobre técnica, seleção musical e construção de narrativa.", "wave"],
+  ["04", "COMUNIDADE EXCLUSIVA", "Um espaço fechado para troca de músicas, feedback, apoio e oportunidades.", "community"],
+  ["05", "ACESSO ÀS AULAS GRAVADAS", "Gravação profissional dos encontros, disponível apenas para os alunos reassistirem.", "recording"],
 ];
+
+function FounderBonusIcon({ kind }: { kind: string }) {
+  const common = { className: "founder-bonus-icon", viewBox: "0 0 64 64", fill: "none", stroke: "currentColor", strokeWidth: 1.5, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, "aria-hidden": true };
+  if (kind === "route") return <svg {...common}><circle cx="15" cy="49" r="5" /><circle cx="49" cy="15" r="5" /><path d="M20 49h8c8 0 8-12 16-12h5V20M41 15h3" /></svg>;
+  if (kind === "profile") return <svg {...common}><rect x="9" y="9" width="46" height="46" rx="10" /><circle cx="32" cy="28" r="8" /><path d="M18 48c3-8 8-12 14-12s11 4 14 12M47 17h.01" /></svg>;
+  if (kind === "wave") return <svg {...common}><path d="M8 32h8l4-13 7 27 7-35 7 42 6-21h9" /></svg>;
+  if (kind === "community") return <svg {...common}><circle cx="32" cy="15" r="7" /><circle cx="15" cy="46" r="7" /><circle cx="49" cy="46" r="7" /><path d="m28 21-9 18m17-18 9 18M22 46h20" /></svg>;
+  return <svg {...common}><rect x="10" y="15" width="44" height="34" rx="6" /><path d="m27 25 13 7-13 7V25Z" /><path d="M41 15V11a7 7 0 0 0-14 0v4" /></svg>;
+}
 
 const courseModules = [
   "Diagnóstico e Direção",
@@ -309,7 +318,7 @@ export default function Home() {
             <p>Recursos de acompanhamento e continuidade incluídos nesta primeira turma.</p>
           </div>
           <div className="founder-bonus-list">
-            {founderBonuses.map(([number, title, copy]) => <article className="founder-bonus" key={number}><div><span>{number}</span><small>INCLUÍDO</small></div><h4>{title}</h4><p>{copy}</p></article>)}
+            {founderBonuses.map(([number, title, copy, icon]) => <article className="founder-bonus" key={number}><div><span>{number}</span><small>INCLUÍDO</small></div><h4>{title}</h4><p>{copy}</p><FounderBonusIcon kind={icon} /></article>)}
           </div>
         </div>
       </section>
@@ -355,3 +364,5 @@ export default function Home() {
     </main>
   );
 }
+
+
