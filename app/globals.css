@@ -380,7 +380,7 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .origin-gallery .timeline-photo:nth-child(2) img { object-position: center 20%; }
   .origin-gallery .timeline-photo figcaption { display: none; }
   .timeline-copy h3 { font-size: clamp(38px, 9vw, 70px); }
-  .sttef { min-height: clamp(560px, 118vw, 760px); padding: 38px 24px 54px; background-position: 48% center; }
+  .sttef { width: calc(100% + 36px); min-height: clamp(560px, 118vw, 760px); margin-inline: -18px; padding: 38px 24px 54px; border-inline: 0; background-position: 48% center; }
   .sttef-logo { width: 68%; }
   .behind { min-height: 1050px; }
   .word-field { grid-template-columns: repeat(6, minmax(0, 1fr)); grid-template-rows: repeat(8, auto); align-content: space-between; gap: 28px 10px; height: auto; min-height: 760px; }
