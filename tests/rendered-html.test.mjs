@@ -33,21 +33,21 @@ test("server-renders the Código da Cena landing page", async () => {
   assert.match(html, /<title>Código da Cena/i);
   assert.match(html, /<link rel="icon" href="\/favicon\.svg" type="image\/svg\+xml"/i);
   assert.match(html, /O que vem depois/i);
-  assert.match(html, /33 MÓDULOS/i);
+  assert.match(html, /32 MÓDULOS/i);
   assert.match(html, /2 DOMINGOS/i);
   assert.match(html, /8 HORAS POR ENCONTRO/i);
   assert.match(html, /CAFÉ DA MANHÃ \+ COFFEE BREAK/i);
   assert.match(html, /ARTISTAS NACIONAIS/i);
   assert.match(html, /ATÉ 50 DJs/i);
   assert.match(html, /ACESSO EXCLUSIVO AOS ALUNOS/i);
-  assert.match(html, /Cinco eixos organizam os 33 módulos/i);
+  assert.match(html, /Cinco eixos organizam os 32 módulos/i);
   assert.match(html, /BÔNUS \/ TURMA FUNDADORA/i);
   assert.match(html, /PLANO DE 90 DIAS PERSONALIZADO/i);
   assert.match(html, /DIAGNÓSTICO DE INSTAGRAM/i);
   assert.match(html, /ANÁLISE DE UM SET GRAVADO/i);
   assert.match(html, /COMUNIDADE EXCLUSIVA/i);
   assert.match(html, /ACESSO ÀS AULAS GRAVADAS/i);
-  assert.doesNotMatch(html, /Seis eixos organizam os 33 módulos/i);
+  assert.doesNotMatch(html, /Seis eixos organizam os 32 módulos/i);
   assert.doesNotMatch(html, /6 ENCONTROS|6 SEMANAS|ATÉ 12 DJs/i);
   assert.doesNotMatch(html, /PERGUNTA ADICIONAL|RESPOSTA A INSERIR/i);
   assert.match(html, /Mixar é técnica\. Carreira é construção\./i);
@@ -64,4 +64,5 @@ test("emits a self-contained Node.js server for Railway", async () => {
   assert.match(packageJson, /"start": "node dist\/standalone\/server\.js"/);
   assert.match(nextConfig, /output:\s*"standalone"/);
 });
+
 
