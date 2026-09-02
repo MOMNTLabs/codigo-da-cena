@@ -73,10 +73,14 @@ h1 { margin: 0; max-width: 1120px; font-size: clamp(56px, 8.1vw, 130px); line-he
 .modules-slider::-webkit-scrollbar { display: none; }
 .module-card { position: relative; display: flex; flex-direction: column; aspect-ratio: 16 / 9; min-height: 0; overflow: hidden; isolation: isolate; scroll-snap-align: start; border: 1px solid var(--line); border-radius: 4px; padding: clamp(15px, 1.25vw, 21px); background: linear-gradient(135deg, #25251f, #10100e 72%); transform-origin: center; transition: transform .32s cubic-bezier(.2, .75, .25, 1), border-color .32s ease, box-shadow .32s ease; }
 .module-card::after { content: ""; position: absolute; z-index: 1; inset: 0; background: linear-gradient(180deg, rgb(5 5 5 / .06) 0%, rgb(5 5 5 / .1) 42%, rgb(5 5 5 / .94) 100%); pointer-events: none; }
-.module-card:not(.has-cover)::before { content: attr(data-module-number); position: absolute; right: 3%; bottom: -14%; color: rgb(213 250 66 / .08); font-size: clamp(110px, 11vw, 190px); line-height: .8; letter-spacing: -.1em; font-weight: 700; }
+.module-card:not(.has-cover-art)::before { content: attr(data-module-number); position: absolute; right: 3%; bottom: -14%; color: rgb(213 250 66 / .08); font-size: clamp(110px, 11vw, 190px); line-height: .8; letter-spacing: -.1em; font-weight: 700; }
 .module-card:hover, .module-card:focus-visible { z-index: 3; transform: translateY(-7px) scale(1.035); border-color: rgb(213 250 66 / .72); box-shadow: 0 22px 52px rgb(0 0 0 / .65); outline: none; }
 .module-card-cover { position: absolute; z-index: -1; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.7) contrast(1.1) brightness(.78); transition: transform .7s ease, filter .7s ease; }
 .module-card:hover .module-card-cover, .module-card:focus-visible .module-card-cover { transform: scale(1.07); filter: saturate(.92) contrast(1.06) brightness(.9); }
+.module-card.has-cover-art { padding: 0; background: #050505; }
+.module-card.has-cover-art::after { display: none; }
+.module-card.has-cover-art .module-card-cover { z-index: 0; filter: none; }
+.module-card.has-cover-art:hover .module-card-cover, .module-card.has-cover-art:focus-visible .module-card-cover { transform: scale(1.025); filter: none; }
 .module-card > span, .module-card-copy { position: relative; z-index: 2; }
 .module-card > span { color: var(--acid); font-size: 9px; letter-spacing: .18em; font-weight: 700; }
 .module-card-copy { margin-top: auto; }
