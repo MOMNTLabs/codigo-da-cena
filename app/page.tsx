@@ -130,14 +130,14 @@ export default function Home() {
     const mobile = window.matchMedia("(max-width: 900px)");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const carousels = Array.from(document.querySelectorAll<HTMLElement>("[data-mobile-carousel]"));
-    const states = new Map<HTMLElement, { pointerActive: boolean; pausedUntil: number; position: number }>();
+    const states = new Map<HTMLElement, { pointerActive: boolean; pausedUntil: number; position: number; loopWidth: number; active: boolean }>();
 
     const prepareCarousels = () => {
       carousels.forEach((carousel) => {
         carousel.querySelectorAll("[data-carousel-clone]").forEach((clone) => clone.remove());
         carousel.scrollLeft = 0;
         const state = states.get(carousel);
-        if (state) state.position = 0;
+        if (state) { state.position = 0; state.loopWidth = 0; }
         if (!mobile.matches || reducedMotion.matches) return;
 
         const originals = Array.from(carousel.querySelectorAll<HTMLElement>(":scope > .timeline-photo"));
@@ -148,11 +148,14 @@ export default function Home() {
           clone.querySelectorAll("img").forEach((image) => image.setAttribute("alt", ""));
           carousel.appendChild(clone);
         });
+        const firstOriginal = carousel.querySelector<HTMLElement>(":scope > .timeline-photo:not([data-carousel-clone])");
+        const firstClone = carousel.querySelector<HTMLElement>(":scope > [data-carousel-clone]");
+        if (state && firstOriginal && firstClone) state.loopWidth = firstClone.offsetLeft - firstOriginal.offsetLeft;
       });
     };
 
     const cleanups = carousels.map((carousel) => {
-      const state = { pointerActive: false, pausedUntil: 0, position: 0 };
+      const state = { pointerActive: false, pausedUntil: 0, position: 0, loopWidth: 0, active: false };
       states.set(carousel, state);
       const pause = () => { state.pointerActive = true; state.position = carousel.scrollLeft; };
       const resume = () => { state.pointerActive = false; state.position = carousel.scrollLeft; state.pausedUntil = Date.now() + 2200; };
@@ -175,6 +178,13 @@ export default function Home() {
     prepareCarousels();
     mobile.addEventListener("change", prepareCarousels);
     reducedMotion.addEventListener("change", prepareCarousels);
+    const visibilityObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const state = states.get(entry.target as HTMLElement);
+        if (state) state.active = entry.isIntersecting;
+      });
+    }, { rootMargin: "120px 0px", threshold: 0.01 });
+    carousels.forEach((carousel) => visibilityObserver.observe(carousel));
 
     let previousFrame = performance.now();
     let animationFrame = 0;
@@ -184,15 +194,11 @@ export default function Home() {
       if (mobile.matches && !reducedMotion.matches && !document.hidden) {
         carousels.forEach((carousel) => {
           const state = states.get(carousel);
-          if (!state || state.pointerActive || Date.now() < state.pausedUntil) return;
+          if (!state || !state.active || state.pointerActive || Date.now() < state.pausedUntil) return;
           state.position += elapsed * 0.022;
           carousel.scrollLeft = state.position;
-          const firstOriginal = carousel.querySelector<HTMLElement>(":scope > .timeline-photo:not([data-carousel-clone])");
-          const firstClone = carousel.querySelector<HTMLElement>(":scope > [data-carousel-clone]");
-          if (!firstOriginal || !firstClone) return;
-          const loopWidth = firstClone.offsetLeft - firstOriginal.offsetLeft;
-          if (loopWidth > 0 && state.position >= loopWidth) {
-            state.position -= loopWidth;
+          if (state.loopWidth > 0 && state.position >= state.loopWidth) {
+            state.position -= state.loopWidth;
             carousel.scrollLeft = state.position;
           }
         });
@@ -205,6 +211,7 @@ export default function Home() {
       window.cancelAnimationFrame(animationFrame);
       mobile.removeEventListener("change", prepareCarousels);
       reducedMotion.removeEventListener("change", prepareCarousels);
+      visibilityObserver.disconnect();
       cleanups.forEach((cleanup) => cleanup());
       carousels.forEach((carousel) => carousel.querySelectorAll("[data-carousel-clone]").forEach((clone) => clone.remove()));
     };
