@@ -11,6 +11,13 @@ const programAxes = [
   ["06", "PLANO DE 90 DIAS", "DIREÇÃO / CONTINUIDADE", "Decisões, metas e ações para dar continuidade ao projeto."],
 ];
 
+const founderBonuses = [
+  ["01", "DIAGNÓSTICO DE INSTAGRAM", "Leitura individual de bio, imagem, organização e posicionamento."],
+  ["02", "ANÁLISE DE UM SET GRAVADO", "Feedback individual sobre técnica, seleção musical e construção de narrativa."],
+  ["03", "COMUNIDADE EXCLUSIVA", "Um espaço fechado para troca de músicas, feedback, apoio e oportunidades."],
+  ["04", "ACESSO ÀS AULAS GRAVADAS", "Gravação profissional dos encontros, disponível apenas para os alunos reassistirem."],
+];
+
 const courseModules = [
   "Diagnóstico e Direção",
   "Fundamentos do DJ",
@@ -296,6 +303,16 @@ export default function Home() {
           {programAxes.map(([number, title, codes, copy]) => <article className="principle reveal" key={number}><span>{number}</span><h3>{title}</h3><div className="encounter-copy"><small>{codes}</small><p>{copy}</p></div><i aria-hidden="true" /></article>)}
         </div>
         <p className="codes-closing reveal">O plano de 90 dias transforma essa leitura em decisões, prioridades e movimento.</p>
+        <div className="founder-bonuses reveal">
+          <div className="founder-bonuses-head">
+            <span>BÔNUS / TURMA FUNDADORA</span>
+            <h3>Além dos<br />módulos.</h3>
+            <p>Recursos de acompanhamento e continuidade incluídos nesta primeira turma.</p>
+          </div>
+          <div className="founder-bonus-list">
+            {founderBonuses.map(([number, title, copy]) => <article className="founder-bonus" key={number}><div><span>{number}</span><small>INCLUÍDO</small></div><h4>{title}</h4><p>{copy}</p></article>)}
+          </div>
+        </div>
       </section>
 
       <section className="experience section-pad" id="experiencia">
