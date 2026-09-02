@@ -130,12 +130,14 @@ export default function Home() {
     const mobile = window.matchMedia("(max-width: 900px)");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const carousels = Array.from(document.querySelectorAll<HTMLElement>("[data-mobile-carousel]"));
-    const states = new Map<HTMLElement, { pointerActive: boolean; pausedUntil: number }>();
+    const states = new Map<HTMLElement, { pointerActive: boolean; pausedUntil: number; position: number }>();
 
     const prepareCarousels = () => {
       carousels.forEach((carousel) => {
         carousel.querySelectorAll("[data-carousel-clone]").forEach((clone) => clone.remove());
         carousel.scrollLeft = 0;
+        const state = states.get(carousel);
+        if (state) state.position = 0;
         if (!mobile.matches || reducedMotion.matches) return;
 
         const originals = Array.from(carousel.querySelectorAll<HTMLElement>(":scope > .timeline-photo"));
@@ -150,10 +152,10 @@ export default function Home() {
     };
 
     const cleanups = carousels.map((carousel) => {
-      const state = { pointerActive: false, pausedUntil: 0 };
+      const state = { pointerActive: false, pausedUntil: 0, position: 0 };
       states.set(carousel, state);
-      const pause = () => { state.pointerActive = true; };
-      const resume = () => { state.pointerActive = false; state.pausedUntil = Date.now() + 2200; };
+      const pause = () => { state.pointerActive = true; state.position = carousel.scrollLeft; };
+      const resume = () => { state.pointerActive = false; state.position = carousel.scrollLeft; state.pausedUntil = Date.now() + 2200; };
       carousel.addEventListener("pointerdown", pause, { passive: true });
       carousel.addEventListener("pointerup", resume, { passive: true });
       carousel.addEventListener("pointercancel", resume, { passive: true });
@@ -183,12 +185,16 @@ export default function Home() {
         carousels.forEach((carousel) => {
           const state = states.get(carousel);
           if (!state || state.pointerActive || Date.now() < state.pausedUntil) return;
-          carousel.scrollLeft += elapsed * 0.022;
+          state.position += elapsed * 0.022;
+          carousel.scrollLeft = state.position;
           const firstOriginal = carousel.querySelector<HTMLElement>(":scope > .timeline-photo:not([data-carousel-clone])");
           const firstClone = carousel.querySelector<HTMLElement>(":scope > [data-carousel-clone]");
           if (!firstOriginal || !firstClone) return;
           const loopWidth = firstClone.offsetLeft - firstOriginal.offsetLeft;
-          if (loopWidth > 0 && carousel.scrollLeft >= loopWidth) carousel.scrollLeft -= loopWidth;
+          if (loopWidth > 0 && state.position >= loopWidth) {
+            state.position -= loopWidth;
+            carousel.scrollLeft = state.position;
+          }
         });
       }
       animationFrame = window.requestAnimationFrame(moveContinuously);
