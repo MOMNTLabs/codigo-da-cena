@@ -47,7 +47,6 @@ function ProgramDetailIcon({ kind }: { kind: string }) {
 }
 
 const courseModules = [
-  "Diagnóstico e Direção",
   "Fundamentos do DJ",
   "Pesquisa Musical e Repertório",
   "Identidade Musical",
@@ -83,11 +82,16 @@ const courseModules = [
 ];
 
 const moduleCoverImages = [
-  "/module-cover-01.webp",
-  "/module-cover-02.webp",
-  "/module-cover-03.webp",
-  "/module-cover-04.webp",
-  "/module-cover-05.webp",
+  "/CC-M01.webp",
+  "/CC-M02.webp",
+  "/CC-M03.webp",
+  "/CC-M04.webp",
+  "/CC-M05.webp",
+  "/CC-M06.webp",
+  "/CC-M07.webp",
+  "/CC-M08.webp",
+  "/CC-M09.webp",
+  "/CC-M10.webp",
 ];
 
 const questions = [
@@ -192,17 +196,17 @@ export default function Home() {
         </div>
         <div className="modules-showcase reveal">
           <div className="modules-head">
-            <div><span>CONTEÚDO DO PROGRAMA</span><strong>33 MÓDULOS</strong></div>
+            <div><span>CONTEÚDO DO PROGRAMA</span><strong>32 MÓDULOS</strong></div>
             <div className="modules-controls">
               <button type="button" onClick={() => moveModules(-1)} aria-label="Ver módulos anteriores"><i className="ui-arrow ui-arrow-left" aria-hidden="true" /></button>
               <button type="button" onClick={() => moveModules(1)} aria-label="Ver próximos módulos"><i className="ui-arrow ui-arrow-right" aria-hidden="true" /></button>
             </div>
           </div>
-          <div className="modules-slider" ref={modulesSliderRef} onScroll={updateModuleStep} tabIndex={0} aria-label="33 módulos do programa" role="list">
+          <div className="modules-slider" ref={modulesSliderRef} onScroll={updateModuleStep} tabIndex={0} aria-label="32 módulos do programa" role="list">
             {courseModules.map((module, index) => {
               const cover = moduleCoverImages[index];
               const moduleNumber = String(index + 1).padStart(2, "0");
-              return <article className={`module-card ${cover ? "has-cover" : ""}`} data-module-number={moduleNumber} role="listitem" tabIndex={0} key={module}>{cover && <img className="module-card-cover" src={cover} alt="" loading="lazy" decoding="async" />}<span>{moduleNumber}</span><div className="module-card-copy"><h3>{module}</h3><small>FORMAÇÃO PRESENCIAL · MÓDULO {moduleNumber}</small></div></article>;
+              return <article className={`module-card ${cover ? "has-cover-art" : ""}`} data-module-number={moduleNumber} role="listitem" tabIndex={0} aria-label={`Módulo ${moduleNumber}: ${module}`} key={module}>{cover ? <img className="module-card-cover" src={cover} alt={`Capa do módulo ${moduleNumber}: ${module}`} loading="lazy" decoding="async" /> : <><span>{moduleNumber}</span><div className="module-card-copy"><h3>{module}</h3><small>FORMAÇÃO PRESENCIAL · MÓDULO {moduleNumber}</small></div></>}</article>;
             })}
           </div>
           <div className="modules-pagination" aria-label="Posição na lista de módulos">
@@ -319,7 +323,7 @@ export default function Home() {
 
       <section className="codes section-pad">
         <p className="section-label reveal">07 / OS EIXOS</p>
-        <div className="codes-head reveal"><h2>UM PERCURSO.<br />NÃO UMA FÓRMULA.</h2><p>Cinco eixos organizam os 33 módulos distribuídos ao longo dos dois domingos.</p></div>
+        <div className="codes-head reveal"><h2>UM PERCURSO.<br />NÃO UMA FÓRMULA.</h2><p>Cinco eixos organizam os 32 módulos distribuídos ao longo dos dois domingos.</p></div>
         <div className="principle-list">
           {programAxes.map(([number, title, codes, copy]) => <article className="principle reveal" key={number}><span>{number}</span><h3>{title}</h3><div className="encounter-copy"><small>{codes}</small><p>{copy}</p></div><i aria-hidden="true" /></article>)}
         </div>
