@@ -2,7 +2,7 @@
 
 import { FormEvent, useEffect, useRef, useState } from "react";
 
-const encounters = [
+const programAxes = [
   ["01", "DIAGNÓSTICO E DIREÇÃO", "CLAREZA / PRIORIDADES", "Leitura do projeto atual, objetivos, travas e prioridades."],
   ["02", "POSICIONAMENTO E IDENTIDADE", "POSICIONAMENTO / IMAGEM", "Proposta artística, diferenciação, narrativa e coerência de imagem."],
   ["03", "RELAÇÕES E PRESENÇA NA CENA", "RELAÇÕES / PRESENÇA", "Networking, comportamento, trocas e construção de confiança."],
@@ -269,12 +269,12 @@ export default function Home() {
         <div className="program-facts reveal"><div><span>FORMATO</span><strong>PRESENCIAL</strong></div><div><span>LOCAL</span><strong>GRANDE VITÓRIA</strong></div></div>
         <div className="program-placeholders reveal">
           {[
-            ['ENCONTROS', '6 ENCONTROS'],
-            ['DURAÇÃO', '18 HORAS · 6 SEMANAS'],
-            ['RITMO', '1 ENCONTRO POR SEMANA'],
-            ['TURMA', 'ATÉ 12 DJs'],
-            ['CONTEÚDO', '33 MÓDULOS · 6 ENCONTROS'],
-            ['ACOMPANHAMENTO', 'DIAGNÓSTICO + GRUPO FECHADO'],
+            ['ENCONTROS', '2 DOMINGOS'],
+            ['DURAÇÃO', '8 HORAS POR ENCONTRO'],
+            ['EXPERIÊNCIA', 'CAFÉ DA MANHÃ + COFFEE BREAK'],
+            ['PARTICIPAÇÕES', 'ARTISTAS NACIONAIS'],
+            ['TURMA', 'ATÉ 50 DJs'],
+            ['GRAVAÇÕES', 'PRODUÇÃO PROFISSIONAL · ACESSO EXCLUSIVO AOS ALUNOS'],
           ].map(([item, value], i) => <div key={item}><span>0{i + 1}</span><p>{item}</p><b>{value}</b></div>)}
         </div>
         <div className="program-investment reveal">
@@ -283,17 +283,18 @@ export default function Home() {
             <h3>R$ 1.497</h3>
           </div>
           <div className="program-investment-copy">
-            <p>O valor considera seis encontros presenciais, acompanhamento próximo e um grupo reduzido de até 12 DJs.</p>
+            <p>O valor considera dois domingos de imersão presencial, com 8 horas por encontro, participação de artistas nacionais, café da manhã e coffee break.</p>
+            <p>As aulas serão gravadas com produção profissional e ficarão disponíveis em acesso exclusivo para os alunos reassistirem.</p>
             <p>A entrada acontece depois de uma conversa breve, para entender se o momento e a proposta fazem sentido para os dois lados.</p>
           </div>
         </div>
       </section>
 
       <section className="codes section-pad">
-        <p className="section-label reveal">07 / OS ENCONTROS</p>
-        <div className="codes-head reveal"><h2>UM PERCURSO.<br />NÃO UMA FÓRMULA.</h2><p>Cada encontro parte do momento real do projeto e termina com decisões aplicáveis.</p></div>
+        <p className="section-label reveal">07 / OS EIXOS</p>
+        <div className="codes-head reveal"><h2>UM PERCURSO.<br />NÃO UMA FÓRMULA.</h2><p>Seis eixos organizam os 33 módulos distribuídos ao longo dos dois domingos.</p></div>
         <div className="principle-list">
-          {encounters.map(([number, title, codes, copy]) => <article className="principle reveal" key={number}><span>{number}</span><h3>{title}</h3><div className="encounter-copy"><small>{codes}</small><p>{copy}</p></div><i aria-hidden="true" /></article>)}
+          {programAxes.map(([number, title, codes, copy]) => <article className="principle reveal" key={number}><span>{number}</span><h3>{title}</h3><div className="encounter-copy"><small>{codes}</small><p>{copy}</p></div><i aria-hidden="true" /></article>)}
         </div>
         <p className="codes-closing reveal">O plano de 90 dias transforma essa leitura em decisões, prioridades e movimento.</p>
       </section>

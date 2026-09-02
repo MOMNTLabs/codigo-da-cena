@@ -34,6 +34,13 @@ test("server-renders the Código da Cena landing page", async () => {
   assert.match(html, /<link rel="icon" href="\/favicon\.svg" type="image\/svg\+xml"/i);
   assert.match(html, /O que vem depois/i);
   assert.match(html, /33 MÓDULOS/i);
+  assert.match(html, /2 DOMINGOS/i);
+  assert.match(html, /8 HORAS POR ENCONTRO/i);
+  assert.match(html, /CAFÉ DA MANHÃ \+ COFFEE BREAK/i);
+  assert.match(html, /ARTISTAS NACIONAIS/i);
+  assert.match(html, /ATÉ 50 DJs/i);
+  assert.match(html, /ACESSO EXCLUSIVO AOS ALUNOS/i);
+  assert.doesNotMatch(html, /6 ENCONTROS|6 SEMANAS|ATÉ 12 DJs/i);
   assert.match(html, /Mixar é técnica\. Carreira é construção\./i);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/i);
 });
