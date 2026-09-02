@@ -51,6 +51,7 @@ test("server-renders the Código da Cena landing page", async () => {
   assert.doesNotMatch(html, /6 ENCONTROS|6 SEMANAS|ATÉ 12 DJs/i);
   assert.doesNotMatch(html, /PERGUNTA ADICIONAL|RESPOSTA A INSERIR/i);
   assert.doesNotMatch(html, /01 \/ O CÓDIGO|02 \/ MANIFESTO|03 \/ A PERGUNTA|04 \/ A TRAJETÓRIA|05 \/ O QUE EXISTE POR TRÁS|06 \/ O PROGRAMA|07 \/ OS EIXOS|08 \/ EXPERIÊNCIA — THE BANK|09 \/ INTERESSE|10 \/ FAQ/i);
+  assert.equal((html.match(/data-mobile-carousel/g) ?? []).length, 4);
   assert.match(html, /Mixar é técnica\. Carreira é construção\./i);
   assert.doesNotMatch(html, /Your site is taking shape|Building your site/i);
 });
