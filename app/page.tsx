@@ -126,6 +126,53 @@ export default function Home() {
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
+  useEffect(() => {
+    const mobile = window.matchMedia("(max-width: 900px)");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const carousels = Array.from(document.querySelectorAll<HTMLElement>("[data-mobile-carousel]"));
+
+    const cleanups = carousels.map((carousel) => {
+      let pointerActive = false;
+      let pausedUntil = 0;
+
+      const pause = () => { pointerActive = true; };
+      const resume = () => { pointerActive = false; pausedUntil = Date.now() + 4500; };
+      const advance = () => {
+        if (!mobile.matches || reducedMotion.matches || pointerActive || Date.now() < pausedUntil || document.hidden) return;
+        const slides = Array.from(carousel.querySelectorAll<HTMLElement>(":scope > .timeline-photo"));
+        if (slides.length < 2) return;
+
+        const carouselCenter = carousel.scrollLeft + carousel.clientWidth / 2;
+        const currentIndex = slides.reduce((closest, slide, index) => {
+          const center = slide.offsetLeft + slide.offsetWidth / 2;
+          const closestCenter = slides[closest].offsetLeft + slides[closest].offsetWidth / 2;
+          return Math.abs(center - carouselCenter) < Math.abs(closestCenter - carouselCenter) ? index : closest;
+        }, 0);
+        const nextSlide = slides[(currentIndex + 1) % slides.length];
+        const nextLeft = nextSlide.offsetLeft - (carousel.clientWidth - nextSlide.offsetWidth) / 2;
+        carousel.scrollTo({ left: Math.max(0, nextLeft), behavior: "smooth" });
+      };
+
+      const timer = window.setInterval(advance, 3600);
+      carousel.addEventListener("pointerdown", pause, { passive: true });
+      carousel.addEventListener("pointerup", resume, { passive: true });
+      carousel.addEventListener("pointercancel", resume, { passive: true });
+      carousel.addEventListener("focusin", pause);
+      carousel.addEventListener("focusout", resume);
+
+      return () => {
+        window.clearInterval(timer);
+        carousel.removeEventListener("pointerdown", pause);
+        carousel.removeEventListener("pointerup", resume);
+        carousel.removeEventListener("pointercancel", resume);
+        carousel.removeEventListener("focusin", pause);
+        carousel.removeEventListener("focusout", resume);
+      };
+    });
+
+    return () => cleanups.forEach((cleanup) => cleanup());
+  }, []);
+
   function submitForm(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setSent(true);
@@ -243,7 +290,7 @@ export default function Home() {
         <div className="timeline">
           <article className="timeline-row reveal">
             <span className="timeline-year">INÍCIO</span>
-            <div className="origin-gallery">
+            <div className="origin-gallery" data-mobile-carousel aria-label="Imagens de A Base">
               <figure className="timeline-photo"><img src="/sttef-small-event-05.webp" alt="Sttef tocando em um evento pequeno e diurno, próximo ao público" loading="lazy" decoding="async" /><figcaption>ROTINA / PRESENÇA</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-small-event-01.webp" alt="Sttef tocando em um evento menor com iluminação vermelha" loading="lazy" decoding="async" /><figcaption>PROXIMIDADE / PISTA</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-small-event-02.webp" alt="Sttef tocando com fones em um espaço intimista" loading="lazy" decoding="async" /><figcaption>PRÁTICA / PRESENÇA</figcaption></figure>
@@ -254,7 +301,7 @@ export default function Home() {
           <article className="timeline-row showcase-row reveal">
             <span className="timeline-year">MOVIMENTO</span>
             <div className="timeline-copy"><span>01 / A ESCALA</span><h3>SOLIDIFICANDO</h3><p>PALCO / PÚBLICO / CONSISTÊNCIA</p></div>
-            <div className="trajectory-gallery">
+            <div className="trajectory-gallery" data-mobile-carousel aria-label="Imagens de A Escala">
               <figure className="timeline-photo"><img src="/sttef-large-event-04.webp" alt="Sttef tocando em um grande evento diurno diante de um palco colorido" loading="lazy" decoding="async" /><figcaption>PALCO / PRESENÇA</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-large-event-03.webp" alt="Sttef interagindo com o público diante da cabine" loading="lazy" decoding="async" /><figcaption>CONEXÃO / PÚBLICO</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-live-crowd.webp" alt="Sttef tocando diante de uma grande pista" loading="lazy" decoding="async" /><figcaption>ESCALA / MOVIMENTO</figcaption></figure>
@@ -264,7 +311,7 @@ export default function Home() {
           </article>
           <article className="timeline-row reveal">
             <span className="timeline-year">EXPANSÃO</span>
-            <div className="sp-gallery">
+            <div className="sp-gallery" data-mobile-carousel aria-label="Imagens de Novos Territórios">
               <figure className="timeline-photo landscape sp-photo"><img src="/sttef-live-sao-paulo.webp" alt="Apresentação em São Paulo vista de trás da cabine" loading="lazy" decoding="async" /><figcaption>SÃO PAULO</figcaption></figure>
               <figure className="timeline-photo portrait sp-photo"><img src="/sttef-large-event-01.webp" alt="Sttef tocando em um grande palco durante o dia em São Paulo" loading="lazy" decoding="async" /><figcaption>SÃO PAULO / PALCO</figcaption></figure>
             </div>
@@ -273,7 +320,7 @@ export default function Home() {
           <article className="timeline-row dream-row reveal">
             <span className="timeline-year">MARCO</span>
             <div className="timeline-copy dream-copy"><span>03 / UM SONHO EM MOVIMENTO</span><h3>REALIZAÇÃO<br />DE UM SONHO</h3><p>DIVIDIR O LINE-UP COM REFERÊNCIAS DA CENA — E ENTENDER QUE O PROJETO JÁ ESTAVA OCUPANDO OUTRO LUGAR.</p></div>
-            <div className="dream-gallery">
+            <div className="dream-gallery" data-mobile-carousel aria-label="Imagens de Um Sonho em Movimento">
               <figure className="timeline-photo"><img src="/sttef-lineup-tech-house.webp" alt="Flyer do Tech House com Sttef no line-up ao lado de atrações nacionais" loading="lazy" decoding="async" /><figcaption>LINE-UP / TECH HOUSE</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-lineup-almare.webp" alt="Flyer do Almare com Sttef no line-up ao lado de atrações nacionais" loading="lazy" decoding="async" /><figcaption>LINE-UP / ALMARE</figcaption></figure>
               <figure className="timeline-photo"><img src="/sttef-lineup-garden.webp" alt="Flyer do Garden com Sttef no line-up ao lado de Gustavo Mota" loading="lazy" decoding="async" /><figcaption>LINE-UP / GARDEN</figcaption></figure>
