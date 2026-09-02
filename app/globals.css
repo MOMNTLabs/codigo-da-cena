@@ -192,10 +192,11 @@ h1 { margin: 0; max-width: 1120px; font-size: clamp(56px, 8.1vw, 130px); line-he
 .program-facts span, .program-placeholders span { color: #73736c; font-size: 9px; letter-spacing: .18em; }
 .program-facts strong { font-size: clamp(34px, 5vw, 78px); letter-spacing: -.05em; font-weight: 500; }
 .program-placeholders { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 9vw; border-top: 1px solid rgb(23 23 20 / .3); }
-.program-placeholders div { min-height: 180px; padding: 18px 18px 24px 0; border-bottom: 1px solid rgb(23 23 20 / .3); }
+.program-placeholders div { position: relative; min-height: 180px; overflow: hidden; padding: 18px 18px 24px 0; border-bottom: 1px solid rgb(23 23 20 / .3); }
 .program-placeholders div:not(:nth-child(3n + 1)) { padding-left: 18px; border-left: 1px solid rgb(23 23 20 / .3); }
-.program-placeholders p { margin: 55px 0 8px; font-size: 14px; }
-.program-placeholders b { display: block; max-width: 290px; color: #73736c; font-size: clamp(10px, .75vw, 12px); line-height: 1.45; letter-spacing: .12em; font-weight: 400; }
+.program-placeholders p { position: relative; z-index: 1; margin: 55px 0 8px; font-size: 14px; }
+.program-placeholders b { position: relative; z-index: 1; display: block; max-width: min(72%, 290px); color: #73736c; font-size: clamp(10px, .75vw, 12px); line-height: 1.45; letter-spacing: .12em; font-weight: 400; }
+.program-detail-icon { position: absolute; right: 18px; bottom: 20px; width: clamp(66px, 6.5vw, 100px); height: auto; color: var(--dark-ink); opacity: .14; pointer-events: none; }
 .program-investment { display: grid; grid-template-columns: 1fr 1fr; gap: 6vw; align-items: end; margin-top: 11vw; padding-top: 30px; border-top: 1px solid rgb(23 23 20 / .3); }
 .program-investment span { color: #73736c; font-size: 9px; letter-spacing: .18em; }
 .program-investment h3 { margin: 35px 0 0; font-size: clamp(62px, 8vw, 132px); line-height: .82; letter-spacing: -.06em; font-weight: 500; }
@@ -447,6 +448,7 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .program-facts div + div { border-left: 0; border-top: 1px solid rgb(23 23 20 / .3); padding-left: 0; }
   .program-placeholders { grid-template-columns: 1fr; }
   .program-placeholders div:nth-child(even) { padding-left: 0; border-left: 0; }
+  .program-detail-icon { right: 4px; bottom: 24px; width: clamp(76px, 22vw, 100px); opacity: .16; }
   .codes-head h2 { font-size: clamp(58px, 17vw, 90px); }
   .principle h3 { font-size: clamp(30px, 8vw, 44px); }
   .principle { grid-template-columns: 34px minmax(0, 1fr) 28px; }
