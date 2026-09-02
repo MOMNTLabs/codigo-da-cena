@@ -189,7 +189,6 @@ export default function Home() {
       </section>
 
       <section className="intro section-pad" id="codigo">
-        <p className="section-label reveal">01 / O CÓDIGO</p>
         <div className="intro-copy">
           <p className="intro-text reveal">Um programa presencial para DJs com foco em desenvolver sua carreira, <em>como se posicionar e criar oportunidades.</em></p>
           <p className="intro-tech-note reveal">A mixagem entra apenas como base prática.</p>
@@ -216,7 +215,6 @@ export default function Home() {
       </section>
 
       <section className="manifesto section-pad">
-        <p className="section-label reveal">02 / MANIFESTO</p>
         <p className="manifesto-question reveal">Aprendi a tocar, e agora?</p>
         <h2 className="manifesto-lead reveal">Existe uma parte da carreira que não está no set.</h2>
         <div className="manifesto-lines">
@@ -229,7 +227,6 @@ export default function Home() {
       </section>
 
       <section className="question section-pad">
-        <p className="section-label dark reveal">03 / A PERGUNTA</p>
         <blockquote className="reveal">“Como você conseguiu chegar até aqui tão rápido?”</blockquote>
         <div className="question-copy reveal">
           <p>Essa pergunta começou a aparecer com frequência.</p>
@@ -240,7 +237,6 @@ export default function Home() {
 
       <section className="trajectory section-pad">
         <div className="trajectory-head">
-          <p className="section-label reveal">04 / A TRAJETÓRIA</p>
           <div className="duration reveal"><strong>18</strong><span>MESES.</span></div>
           <p className="duration-note reveal">Em cerca de um ano e meio de projeto,<br />muita coisa aconteceu.</p>
         </div>
@@ -289,7 +285,6 @@ export default function Home() {
       </section>
 
       <section className="behind section-pad">
-        <p className="section-label reveal">05 / O QUE EXISTE POR TRÁS</p>
         <h2 className="display-title reveal">Não foi<br />uma coisa.</h2>
         <div className="word-field" aria-label="Elementos de uma carreira">
           {['POSICIONAMENTO','RELAÇÕES','TIMING','PROFISSIONALISMO','IMAGEM','CONTEÚDO','BOOKING','NEGOCIAÇÃO','PRESENÇA'].map((word, i) => <span className={`word w${i + 1} reveal`} key={word}>{word}</span>)}
@@ -298,7 +293,6 @@ export default function Home() {
       </section>
 
       <section className="program section-pad" id="programa">
-        <p className="section-label dark reveal">06 / O PROGRAMA</p>
         <div className="program-intro reveal">
           <h2>Código<br />da Cena</h2>
           <div><p className="program-kicker">Um programa presencial de desenvolvimento de carreira para DJs.</p><p>Um espaço para colocar projeto, posicionamento, relações, oportunidades e decisões reais na mesa.</p></div>
@@ -322,7 +316,6 @@ export default function Home() {
       </section>
 
       <section className="codes section-pad">
-        <p className="section-label reveal">07 / OS EIXOS</p>
         <div className="codes-head reveal"><h2>UM PERCURSO.<br />NÃO UMA FÓRMULA.</h2><p>Cinco eixos organizam os 32 módulos distribuídos ao longo dos dois domingos.</p></div>
         <div className="principle-list">
           {programAxes.map(([number, title, codes, copy]) => <article className="principle reveal" key={number}><span>{number}</span><h3>{title}</h3><div className="encounter-copy"><small>{codes}</small><p>{copy}</p></div><i aria-hidden="true" /></article>)}
@@ -340,7 +333,6 @@ export default function Home() {
       </section>
 
       <section className="experience section-pad" id="experiencia">
-        <p className="section-label reveal">08 / EXPERIÊNCIA — THE BANK</p>
         <div className="experience-visual reveal"><img className="experience-photo" src="/the-bank-industrial-club.webp" alt="Interior de um club underground com arquitetura industrial" loading="lazy" decoding="async" /><img className="bank-logo" src="/the-bank-logo.svg" alt="The Bank" loading="lazy" decoding="async" /><span>EXPERIÊNCIA / CLUB UNDERGROUND</span></div>
         <div className="experience-copy reveal">
           <h2>A cena não termina<br />na conversa.</h2>
@@ -349,7 +341,6 @@ export default function Home() {
       </section>
 
       <section className="interest section-pad" id="contato">
-        <p className="section-label dark reveal">09 / INTERESSE</p>
         <div className="interest-head reveal"><h2>Quer entender se o Código da Cena faz sentido para o seu momento?</h2><p>Conte um pouco sobre o seu projeto.</p></div>
         {sent ? (
           <div className="form-success" role="status"><span>✓</span><h3>Recebemos seu contato.</h3><p>Falamos em breve.</p><button type="button" onClick={() => setSent(false)}>Enviar outro contato</button></div>
@@ -369,7 +360,6 @@ export default function Home() {
       </section>
 
       <section className="faq section-pad">
-        <p className="section-label reveal">10 / FAQ</p>
         <div className="faq-layout"><h2 className="reveal">PERGUNTAS<br />FREQUENTES</h2><div className="faq-list">{questions.map(([question, answer], i) => <details className="reveal" key={question}><summary><span>{String(i + 1).padStart(2, '0')}</span>{question}<i>+</i></summary><p>{answer}</p></details>)}</div></div>
       </section>
 
