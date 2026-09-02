@@ -127,38 +127,27 @@ export default function Home() {
   }, [menuOpen]);
 
   useEffect(() => {
-    const mobile = window.matchMedia("(max-width: 900px)");
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const carousels = Array.from(document.querySelectorAll<HTMLElement>("[data-mobile-carousel]"));
-    const states = new Map<HTMLElement, { pointerActive: boolean; pausedUntil: number; position: number; loopWidth: number; active: boolean }>();
-
-    const prepareCarousels = () => {
-      carousels.forEach((carousel) => {
-        carousel.querySelectorAll("[data-carousel-clone]").forEach((clone) => clone.remove());
-        carousel.scrollLeft = 0;
-        const state = states.get(carousel);
-        if (state) { state.position = 0; state.loopWidth = 0; }
-        if (!mobile.matches || reducedMotion.matches) return;
-
-        const originals = Array.from(carousel.querySelectorAll<HTMLElement>(":scope > .timeline-photo"));
-        originals.forEach((slide) => {
-          const clone = slide.cloneNode(true) as HTMLElement;
-          clone.setAttribute("data-carousel-clone", "true");
-          clone.setAttribute("aria-hidden", "true");
-          clone.querySelectorAll("img").forEach((image) => image.setAttribute("alt", ""));
-          carousel.appendChild(clone);
-        });
-        const firstOriginal = carousel.querySelector<HTMLElement>(":scope > .timeline-photo:not([data-carousel-clone])");
-        const firstClone = carousel.querySelector<HTMLElement>(":scope > [data-carousel-clone]");
-        if (state && firstOriginal && firstClone) state.loopWidth = firstClone.offsetLeft - firstOriginal.offsetLeft;
-      });
-    };
-
     const cleanups = carousels.map((carousel) => {
-      const state = { pointerActive: false, pausedUntil: 0, position: 0, loopWidth: 0, active: false };
-      states.set(carousel, state);
-      const pause = () => { state.pointerActive = true; state.position = carousel.scrollLeft; };
-      const resume = () => { state.pointerActive = false; state.position = carousel.scrollLeft; state.pausedUntil = Date.now() + 2200; };
+      const originals = Array.from(carousel.querySelectorAll<HTMLElement>(":scope > .timeline-photo"));
+      const track = document.createElement("div");
+      track.className = "mobile-loop-track";
+      originals.forEach((slide) => track.appendChild(slide));
+      originals.forEach((slide) => {
+        const clone = slide.cloneNode(true) as HTMLElement;
+        clone.setAttribute("data-carousel-clone", "true");
+        clone.setAttribute("aria-hidden", "true");
+        clone.querySelectorAll("img").forEach((image) => image.setAttribute("alt", ""));
+        track.appendChild(clone);
+      });
+      carousel.appendChild(track);
+
+      let resumeTimer = 0;
+      const pause = () => { window.clearTimeout(resumeTimer); carousel.classList.add("is-paused"); };
+      const resume = () => {
+        window.clearTimeout(resumeTimer);
+        resumeTimer = window.setTimeout(() => carousel.classList.remove("is-paused"), 2200);
+      };
       carousel.addEventListener("pointerdown", pause, { passive: true });
       carousel.addEventListener("pointerup", resume, { passive: true });
       carousel.addEventListener("pointercancel", resume, { passive: true });
@@ -166,55 +155,19 @@ export default function Home() {
       carousel.addEventListener("focusin", pause);
       carousel.addEventListener("focusout", resume);
       return () => {
+        window.clearTimeout(resumeTimer);
         carousel.removeEventListener("pointerdown", pause);
         carousel.removeEventListener("pointerup", resume);
         carousel.removeEventListener("pointercancel", resume);
         carousel.removeEventListener("pointerleave", resume);
         carousel.removeEventListener("focusin", pause);
         carousel.removeEventListener("focusout", resume);
+        carousel.classList.remove("is-paused");
+        originals.forEach((slide) => carousel.insertBefore(slide, track));
+        track.remove();
       };
     });
-
-    prepareCarousels();
-    mobile.addEventListener("change", prepareCarousels);
-    reducedMotion.addEventListener("change", prepareCarousels);
-    const visibilityObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const state = states.get(entry.target as HTMLElement);
-        if (state) state.active = entry.isIntersecting;
-      });
-    }, { rootMargin: "120px 0px", threshold: 0.01 });
-    carousels.forEach((carousel) => visibilityObserver.observe(carousel));
-
-    let previousFrame = performance.now();
-    let animationFrame = 0;
-    const moveContinuously = (now: number) => {
-      const elapsed = Math.min(now - previousFrame, 50);
-      previousFrame = now;
-      if (mobile.matches && !reducedMotion.matches && !document.hidden) {
-        carousels.forEach((carousel) => {
-          const state = states.get(carousel);
-          if (!state || !state.active || state.pointerActive || Date.now() < state.pausedUntil) return;
-          state.position += elapsed * 0.022;
-          carousel.scrollLeft = state.position;
-          if (state.loopWidth > 0 && state.position >= state.loopWidth) {
-            state.position -= state.loopWidth;
-            carousel.scrollLeft = state.position;
-          }
-        });
-      }
-      animationFrame = window.requestAnimationFrame(moveContinuously);
-    };
-    animationFrame = window.requestAnimationFrame(moveContinuously);
-
-    return () => {
-      window.cancelAnimationFrame(animationFrame);
-      mobile.removeEventListener("change", prepareCarousels);
-      reducedMotion.removeEventListener("change", prepareCarousels);
-      visibilityObserver.disconnect();
-      cleanups.forEach((cleanup) => cleanup());
-      carousels.forEach((carousel) => carousel.querySelectorAll("[data-carousel-clone]").forEach((clone) => clone.remove()));
-    };
+    return () => cleanups.forEach((cleanup) => cleanup());
   }, []);
 
   function submitForm(event: FormEvent<HTMLFormElement>) {
