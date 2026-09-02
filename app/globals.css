@@ -365,6 +365,7 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .showcase-row > .timeline-copy { grid-row: 1; padding: 0 8% 55px; }
   .showcase-row > .timeline-copy h3 { max-width: 100%; font-size: clamp(34px, 10vw, 58px); letter-spacing: -.055em; white-space: nowrap; }
   .origin-gallery, .trajectory-gallery, .sp-gallery, .dream-gallery { --carousel-duration: 72s; display: block; grid-template-columns: none; width: calc(100% + 18px); max-width: none; height: auto; margin: 0 -18px 0 0; padding: 0 18px 20px; overflow-x: auto; overflow-y: hidden; overscroll-behavior-inline: contain; scroll-snap-type: none; scrollbar-width: none; transform: none; }
+  .origin-gallery, .trajectory-gallery, .timeline-row > .sp-gallery { width: calc(100% + 36px); margin-inline: -18px; padding-inline: 0; }
   .origin-gallery::-webkit-scrollbar, .trajectory-gallery::-webkit-scrollbar, .sp-gallery::-webkit-scrollbar, .dream-gallery::-webkit-scrollbar { display: none; }
   .mobile-loop-track { display: flex; align-items: center; gap: 12px; width: max-content; animation: trajectory-loop var(--carousel-duration) linear infinite; will-change: transform; }
   [data-carousel-clone] { display: block; }
@@ -456,12 +457,13 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .duration span { font-size: 35px; }
   .duration-note { font-size: 21px; }
   .media-placeholder.portrait, .media-placeholder.landscape, .timeline-photo.portrait, .timeline-photo.landscape { width: 82%; }
-  .origin-gallery, .trajectory-gallery, .sp-gallery, .dream-gallery { width: calc(100% + 18px); gap: 10px; }
-  .timeline-row > .sp-gallery { width: calc(100% + 18px); gap: 10px; }
+  .origin-gallery, .trajectory-gallery, .sp-gallery, .dream-gallery { gap: 10px; }
+  .origin-gallery, .trajectory-gallery, .timeline-row > .sp-gallery { width: calc(100% + 36px); }
+  .timeline-row > .sp-gallery { gap: 10px; }
   .sp-gallery .timeline-photo.landscape,
   .sp-gallery .timeline-photo.portrait { width: 100%; justify-self: stretch; }
   .dream-row > .dream-gallery { width: calc(100% + 18px); gap: 9px; }
-  .origin-gallery { width: calc(100% + 18px); gap: 8px; }
+  .origin-gallery { gap: 8px; }
   .display-title { font-size: clamp(70px, 23vw, 120px); }
   .word-field { min-height: 700px; gap: 24px 8px; }
   .program-facts { grid-template-columns: 1fr; }
