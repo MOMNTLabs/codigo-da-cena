@@ -132,14 +132,26 @@ export default function Home() {
       const originals = Array.from(carousel.querySelectorAll<HTMLElement>(":scope > .timeline-photo"));
       const track = document.createElement("div");
       track.className = "mobile-loop-track";
+      const extraCopyCount = originals.length <= 2 ? 3 : 1;
+      const totalSetCount = extraCopyCount + 1;
+      const hasExtendedLoop = extraCopyCount > 1;
+      if (hasExtendedLoop) {
+        track.classList.add("is-extended-loop");
+        originals.forEach((slide) => slide.querySelectorAll("img").forEach((image) => { image.loading = "eager"; }));
+      }
       originals.forEach((slide) => track.appendChild(slide));
-      originals.forEach((slide) => {
-        const clone = slide.cloneNode(true) as HTMLElement;
-        clone.setAttribute("data-carousel-clone", "true");
-        clone.setAttribute("aria-hidden", "true");
-        clone.querySelectorAll("img").forEach((image) => image.setAttribute("alt", ""));
-        track.appendChild(clone);
-      });
+      for (let copyIndex = 0; copyIndex < extraCopyCount; copyIndex += 1) {
+        originals.forEach((slide) => {
+          const clone = slide.cloneNode(true) as HTMLElement;
+          clone.setAttribute("data-carousel-clone", "true");
+          clone.setAttribute("aria-hidden", "true");
+          clone.querySelectorAll("img").forEach((image) => {
+            image.setAttribute("alt", "");
+            if (hasExtendedLoop) image.loading = "eager";
+          });
+          track.appendChild(clone);
+        });
+      }
       carousel.appendChild(track);
 
       let touchStartX = 0;
@@ -162,6 +174,9 @@ export default function Home() {
       };
       const finishTouch = () => {
         trackingTouch = false;
+        const gap = Number.parseFloat(window.getComputedStyle(track).columnGap) || 0;
+        const loopWidth = (track.scrollWidth + gap) / totalSetCount;
+        if (loopWidth > 0 && carousel.scrollLeft >= loopWidth) carousel.scrollLeft %= loopWidth;
         carousel.classList.remove("is-dragging");
       };
       carousel.addEventListener("touchstart", onTouchStart, { passive: true });
