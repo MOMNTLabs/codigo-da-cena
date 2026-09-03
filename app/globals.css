@@ -390,7 +390,9 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .origin-gallery .timeline-photo:nth-child(2) img { object-position: center 20%; }
   .origin-gallery .timeline-photo figcaption { display: none; }
   .timeline-row, .showcase-row, .dream-row { padding: 70px 0; overflow: hidden; }
-  .timeline-row > .timeline-copy, .timeline-row.reverse > .timeline-copy, .showcase-row > .timeline-copy, .dream-row > .dream-copy { position: absolute; z-index: 4; left: 0; right: 0; bottom: 70px; grid-column: 1; grid-row: 1; align-items: flex-start; padding: clamp(110px, 25vw, 170px) 28px 30px; pointer-events: none; text-align: left; background: linear-gradient(180deg, transparent 0%, rgb(5 5 5 / .18) 24%, rgb(5 5 5 / .9) 100%); }
+  .timeline-row > .origin-gallery, .trajectory-gallery, .timeline-row > .sp-gallery, .dream-row > .dream-gallery { grid-row: 2; }
+  .timeline-row > .timeline-copy, .timeline-row.reverse > .timeline-copy, .showcase-row > .timeline-copy, .dream-row > .dream-copy { position: relative; z-index: 4; left: auto; right: auto; bottom: auto; grid-column: 1; grid-row: 1; align-items: flex-start; padding: 0 18px 32px; pointer-events: auto; text-align: left; background: none; }
+  .dream-row > .dream-copy { padding-inline: 0; }
   .timeline-row > .timeline-copy h3, .showcase-row > .timeline-copy h3, .dream-row > .dream-copy h3 { max-width: 100%; margin: 14px 0 8px; font-size: clamp(34px, 9.5vw, 58px); white-space: normal; }
   .timeline-row > .timeline-copy p, .showcase-row > .timeline-copy p, .dream-row > .dream-copy p { max-width: 92%; margin: 0; color: rgb(240 239 232 / .78); }
   .timeline-copy h3 { font-size: clamp(38px, 9vw, 70px); }
