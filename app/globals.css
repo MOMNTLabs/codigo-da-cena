@@ -370,7 +370,7 @@ footer { padding: 8vw var(--gutter) 25px; background: #080808; }
   .origin-gallery::-webkit-scrollbar, .trajectory-gallery::-webkit-scrollbar, .sp-gallery::-webkit-scrollbar, .dream-gallery::-webkit-scrollbar { display: none; }
   .mobile-loop-track { display: flex; align-items: center; gap: 12px; width: max-content; animation: trajectory-loop var(--carousel-duration) linear infinite; will-change: transform; }
   [data-carousel-clone] { display: block; }
-  [data-mobile-carousel].is-paused .mobile-loop-track, [data-mobile-carousel]:active .mobile-loop-track, [data-mobile-carousel]:focus-within .mobile-loop-track { animation-play-state: paused; }
+  [data-mobile-carousel].is-dragging .mobile-loop-track { animation-play-state: paused; }
   .origin-gallery .timeline-photo, .trajectory-gallery .timeline-photo, .sp-gallery .timeline-photo, .dream-gallery .timeline-photo { flex: 0 0 clamp(290px, 78vw, 430px); width: clamp(290px, 78vw, 430px); height: auto; margin: 0; transform: none; }
   .trajectory-gallery { grid-row: 2; }
   .trajectory-gallery { --carousel-duration: 90s; }

@@ -142,27 +142,38 @@ export default function Home() {
       });
       carousel.appendChild(track);
 
-      let resumeTimer = 0;
-      const pause = () => { window.clearTimeout(resumeTimer); carousel.classList.add("is-paused"); };
-      const resume = () => {
-        window.clearTimeout(resumeTimer);
-        resumeTimer = window.setTimeout(() => carousel.classList.remove("is-paused"), 2200);
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let trackingTouch = false;
+      const onTouchStart = (event: TouchEvent) => {
+        const touch = event.touches[0];
+        if (!touch) return;
+        touchStartX = touch.clientX;
+        touchStartY = touch.clientY;
+        trackingTouch = true;
       };
-      carousel.addEventListener("pointerdown", pause, { passive: true });
-      carousel.addEventListener("pointerup", resume, { passive: true });
-      carousel.addEventListener("pointercancel", resume, { passive: true });
-      carousel.addEventListener("pointerleave", resume, { passive: true });
-      carousel.addEventListener("focusin", pause);
-      carousel.addEventListener("focusout", resume);
+      const onTouchMove = (event: TouchEvent) => {
+        if (!trackingTouch) return;
+        const touch = event.touches[0];
+        if (!touch) return;
+        const distanceX = Math.abs(touch.clientX - touchStartX);
+        const distanceY = Math.abs(touch.clientY - touchStartY);
+        if (distanceX > 8 && distanceX > distanceY) carousel.classList.add("is-dragging");
+      };
+      const finishTouch = () => {
+        trackingTouch = false;
+        carousel.classList.remove("is-dragging");
+      };
+      carousel.addEventListener("touchstart", onTouchStart, { passive: true });
+      carousel.addEventListener("touchmove", onTouchMove, { passive: true });
+      carousel.addEventListener("touchend", finishTouch, { passive: true });
+      carousel.addEventListener("touchcancel", finishTouch, { passive: true });
       return () => {
-        window.clearTimeout(resumeTimer);
-        carousel.removeEventListener("pointerdown", pause);
-        carousel.removeEventListener("pointerup", resume);
-        carousel.removeEventListener("pointercancel", resume);
-        carousel.removeEventListener("pointerleave", resume);
-        carousel.removeEventListener("focusin", pause);
-        carousel.removeEventListener("focusout", resume);
-        carousel.classList.remove("is-paused");
+        carousel.removeEventListener("touchstart", onTouchStart);
+        carousel.removeEventListener("touchmove", onTouchMove);
+        carousel.removeEventListener("touchend", finishTouch);
+        carousel.removeEventListener("touchcancel", finishTouch);
+        carousel.classList.remove("is-dragging");
         originals.forEach((slide) => carousel.insertBefore(slide, track));
         track.remove();
       };
