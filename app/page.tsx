@@ -290,7 +290,7 @@ export default function Home() {
         <div className="manifesto-lines">
           <p className="reveal">Está em como você se posiciona.</p>
           <p className="reveal">Nas relações que constrói.</p>
-          <p className="reveal">Na maneira como comunica o seu trabalho.</p>
+          <p className="reveal mobile-optional">Na maneira como comunica o seu trabalho.</p>
           <p className="reveal">Em reconhecer uma oportunidade — e o que fazer depois dela.</p>
         </div>
         <p className="manifesto-end reveal">É sobre essa parte<br />que estamos falando.</p>
@@ -299,7 +299,7 @@ export default function Home() {
       <section className="question section-pad">
         <blockquote className="reveal">“Como você conseguiu chegar até aqui tão rápido?”</blockquote>
         <div className="question-copy reveal">
-          <p>Essa pergunta começou a aparecer com frequência.</p>
+          <p className="mobile-optional">Essa pergunta começou a aparecer com frequência.</p>
           <p>A resposta não estava em uma fórmula.</p>
           <p>Estava em uma sequência de decisões, experiências, erros e movimentos feitos dentro e fora da cena.</p>
         </div>
@@ -365,7 +365,7 @@ export default function Home() {
       <section className="program section-pad" id="programa">
         <div className="program-intro reveal">
           <h2>Código<br />da Cena</h2>
-          <div><p className="program-kicker">Um programa presencial de desenvolvimento de carreira para DJs.</p><p>Um espaço para colocar projeto, posicionamento, relações, oportunidades e decisões reais na mesa.</p></div>
+          <div><p className="program-kicker">Um programa presencial de desenvolvimento de carreira para DJs.</p><p className="mobile-optional">Um espaço para colocar projeto, posicionamento, relações, oportunidades e decisões reais na mesa.</p></div>
         </div>
         <div className="program-statement reveal">Entender onde você está hoje.<br />O que está te segurando.<br /><em>E o que precisa mudar para que o projeto avance.</em></div>
         <div className="program-facts reveal"><div><span>FORMATO</span><strong>PRESENCIAL</strong></div><div><span>LOCAL</span><strong>GRANDE VITÓRIA</strong></div></div>
