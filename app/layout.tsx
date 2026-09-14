@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   title: "Código da Cena — Desenvolvimento de carreira para DJs",
   description: "Programa presencial de desenvolvimento de carreira para DJs na Grande Vitória.",
   icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
-    shortcut: "/favicon.svg",
+    icon: [{ url: "/favicon.png", type: "image/png" }],
+    shortcut: "/favicon.png",
   },
   metadataBase: new URL(
     publicDomain ? `https://${publicDomain}` : "http://localhost:3000",
