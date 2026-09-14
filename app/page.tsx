@@ -372,17 +372,6 @@ export default function Home() {
         <div className="program-placeholders reveal">
           {programDetails.map(([item, value, icon], i) => <div key={item}><span>0{i + 1}</span><p>{item}</p><b>{value}</b><ProgramDetailIcon kind={icon} /></div>)}
         </div>
-        <div className="program-investment reveal">
-          <div>
-            <span>INVESTIMENTO / TURMA INAUGURAL</span>
-            <h3>R$ 1.497</h3>
-          </div>
-          <div className="program-investment-copy">
-            <p>O valor considera dois domingos de imersão presencial, com 8 horas por encontro, participação de artistas nacionais, café da manhã e coffee break.</p>
-            <p>As aulas serão gravadas com produção profissional e ficarão disponíveis em acesso exclusivo para os alunos reassistirem.</p>
-            <p>A entrada acontece depois de uma conversa breve, para entender se o momento e a proposta fazem sentido para os dois lados.</p>
-          </div>
-        </div>
       </section>
 
       <section className="codes section-pad">
